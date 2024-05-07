@@ -1,7 +1,8 @@
 import { styled, Typography } from '@mui/material';
 
 export const StyledTitle = styled(Typography)({
-  fontSize: '20px',
+  textAlign: 'center',
+  fontSize: '35px',
   fontFamily: 'Comfortaa',
   fontStyle: 'normal',
   fontWeight: 'bold',

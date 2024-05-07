@@ -11,3 +11,4 @@
 ### Dev Notes:
 - finish sorting out development tools (i.e., eslint, prettier, etc.)
 - left off on sidebar component, finish that up
+- figure out how to get updates deployed to website link

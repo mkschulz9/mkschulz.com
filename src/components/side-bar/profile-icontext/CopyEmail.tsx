@@ -37,9 +37,17 @@ export const EmailCopyTooltip: React.FC = () => {
             <Tooltip
                 PopperProps={{
                     disablePortal: true,
+                    modifiers: [
+                        {
+                            name: 'offset',
+                            options: {
+                                offset: [0, -8],
+                            },
+                        },
+                    ],
                 }}
                 arrow
-                placement="right"
+                placement="top-start"
                 onClose={handleTooltipClose}
                 open={open}
                 disableFocusListener
