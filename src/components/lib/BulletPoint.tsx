@@ -4,13 +4,16 @@ import { Box, Typography } from '@mui/material';
 interface BulletPointProps {
     label: string;
     children: ReactNode;
-    horizontal?: boolean;
 }
 
-const BulletPoint: React.FC<BulletPointProps> = ({ label, children, horizontal = false }) => {
+const BulletPoint: React.FC<BulletPointProps> = ({ label, children }) => {
     return (
-        <Box display={horizontal ? "flex" : "block"} alignItems={horizontal ? "center" : undefined}>
-            <Typography variant="body2" sx={{ fontWeight: 700, mr: horizontal ? 1 : 0 }}>
+        <Box sx={{
+            display: 'flex',
+            justifyContent: 'flex-start',
+            gap: 1
+        }}>
+            <Typography variant="body2" sx={{ minWidth: '122px' }}>
                 &bull; {label}
             </Typography>
             {children}

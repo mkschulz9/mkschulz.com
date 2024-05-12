@@ -1,6 +1,5 @@
 import React from 'react';
-import { List, ListItem, Chip } from '@mui/material';
-import BulletPoint from '../../lib/BulletPoint';
+import { Chip, Stack, Box, Typography } from '@mui/material';
 
 interface CoursesCompletedProps {
     courses: string[];
@@ -9,29 +8,35 @@ interface CoursesCompletedProps {
 
 const CoursesCompleted: React.FC<CoursesCompletedProps> = ({ courses, getColor }) => {
     return (
-        <BulletPoint label="Courses Completed:">
-            <List dense>
+        <Box>
+            <Typography variant="body2" sx={{ minWidth: '122px' }}>
+                &bull; Courses Completed:
+            </Typography>
+            <Stack direction="row" flexWrap="wrap" sx={{
+                m: -0.5,
+                width: 'calc(100% + 16px)',
+                p: 0.5
+            }}>
                 {courses.map((course, index) => (
-                    <ListItem key={index}>
-                        <Chip
-                            label={course}
-                            sx={{
-                                height: 'auto',
-                                padding: '5px',
-                                fontSize: '1rem',
-                                backgroundColor: getColor(index),
-                                color: 'white',
-                                '& .MuiChip-label': {
-                                    display: 'block',
-                                    whiteSpace: 'normal',
-                                },
-                                justifyContent: 'start',
-                            }}
-                        />
-                    </ListItem>
+                    <Chip
+                        key={index}
+                        label={course}
+                        sx={{
+
+                            padding: '4px',
+                            fontSize: '14px',
+                            backgroundColor: getColor(index),
+                            color: 'white',
+                            '& .MuiChip-label': {
+                                display: 'block',
+                                whiteSpace: 'normal',
+                            },
+                            m: 0.5
+                        }}
+                    />
                 ))}
-            </List>
-        </BulletPoint>
+            </Stack>
+        </Box >
     );
 };
 

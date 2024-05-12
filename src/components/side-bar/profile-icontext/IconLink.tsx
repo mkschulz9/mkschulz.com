@@ -18,7 +18,12 @@ const IconLink: React.FC<IconLinkProps> = ({ Icon, href, text }) => {
     );
 
     return (
-        <Stack direction="row" spacing={1} alignItems="center">
+        <Stack sx={{
+            display: 'flex',
+            flexDirection: 'row',
+            alignItems: 'center',
+            gap: 0.75
+        }}>
             <Icon />
             {content}
         </Stack>

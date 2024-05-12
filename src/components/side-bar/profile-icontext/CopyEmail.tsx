@@ -32,7 +32,12 @@ export const EmailCopyTooltip: React.FC = () => {
     };
 
     return (
-        <Stack direction="row" spacing={1} alignItems="center">
+        <Stack sx={{
+            display: 'flex',
+            flexDirection: 'row',
+            alignItems: 'center',
+            gap: 0.75,
+        }}>
             <EmailIcon aria-label="email" />
             <Tooltip
                 PopperProps={{
@@ -47,7 +52,7 @@ export const EmailCopyTooltip: React.FC = () => {
                     ],
                 }}
                 arrow
-                placement="top-start"
+                placement="right"
                 onClose={handleTooltipClose}
                 open={open}
                 disableFocusListener
@@ -70,4 +75,4 @@ export const EmailCopyTooltip: React.FC = () => {
     );
 };
 
-//make component reusable later (if funcitonality is needed again)
+// tooltip could do with some minor improvements (i.e., 'copied' stay until hoveraway, spazzy tooltip at times)

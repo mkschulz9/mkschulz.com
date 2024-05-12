@@ -1,9 +1,12 @@
 import { styled, Typography } from '@mui/material';
 
-export const StyledTitle = styled(Typography)({
+interface StyledTitleProps {
+  fontSize: number;
+}
+
+export const StyledTitle = styled(Typography)<StyledTitleProps>(({ fontSize }) => ({
   textAlign: 'center',
-  fontSize: '35px',
+  fontSize: `${fontSize}px`,
   fontFamily: 'Comfortaa',
-  fontStyle: 'normal',
   fontWeight: 'bold',
-});
+}));
