@@ -8,9 +8,15 @@
 ## Features
 - [Blank]
 
-### Dev Notes:
-- finish sorting out development tools (i.e., eslint, prettier, etc.)
-- figure out how to get updates deployed to website link
+### ToDo/Bugs:
+- make theme consistent (font; some settings in index.html)
+- make dropdowns responsive (similar to process on sidebar)
+- copy tooltip text changes back to copy after displaying copied very briefly
+- change exports to ones used in AboutMe componenet
+- fix build process to get website to work on GitHub Pages
 
 ### Future Features:
 - make sidebar collapsible
+
+### AI/ML Feature Ideas:
+- speechify website in my voice (i.e., explain my projects, resume, etc.)

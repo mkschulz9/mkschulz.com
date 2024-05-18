@@ -7,7 +7,7 @@ import DegreeInformation from './degree-info/DegreeInformation';
 export const SideBar: React.FC = () => {
   const degreeInfo = {
     degreeType: "M.S.",
-    degree: "Computer Science (AI)",
+    degree: "Computer Science (Spec. in AI)",
     startDate: new Date('2023-08-21'),
     endDate: new Date('2025-05-10'),
     courses: [
@@ -20,7 +20,7 @@ export const SideBar: React.FC = () => {
 
   return (
     <Box sx={{ maxWidth: { sm: '55vh' } }}>
-      <Paper elevation={6} sx={{ p: 1 }}>
+      <Paper elevation={6} sx={{ p: 1, height: '100vh + 2px' }}>
         <ProfileAvatar name='Matthew Schulz' />
         <Divider />
         <Stack sx={{

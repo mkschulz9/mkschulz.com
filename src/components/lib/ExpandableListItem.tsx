@@ -20,7 +20,7 @@ export const ExpandableListItem: React.FC<ExpandableListItemProps> = props => {
   return (
     <>
       <ListItemButton
-        sx={{ pt: 1.5, pb: 1.5 }}
+        sx={{ pt: 1.5, pb: 1.5, maxHeight: '60px' }}
         onClick={() => setExpanded(!expanded)}
       >
         <Stack direction="row" width="100%" alignItems="center" spacing={1}>

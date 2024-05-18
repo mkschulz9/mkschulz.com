@@ -13,9 +13,7 @@ const CoursesCompleted: React.FC<CoursesCompletedProps> = ({ courses, getColor }
                 &bull; Courses Completed:
             </Typography>
             <Stack direction="row" flexWrap="wrap" sx={{
-                m: -0.5,
-                width: 'calc(100% + 16px)',
-                p: 0.5
+                width: '100%'
             }}>
                 {courses.map((course, index) => (
                     <Chip

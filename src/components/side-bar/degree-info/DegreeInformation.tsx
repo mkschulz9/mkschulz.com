@@ -44,7 +44,14 @@ const DegreeInformation: React.FC<DegreeInformationProps> = ({
             }}>
                 <StyledTitle fontSize={20}>{degreeType} {degree}:</StyledTitle>
                 <BulletPoint label="Degree Progress:">
-                    <Stack justifyContent='center' sx={{ display: 'flex', flexDirection: 'column', width: '100%', alignItems: 'center', pt: 0.25 }}>
+                    <Stack justifyContent='center'
+                        sx={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            width: '100%',
+                            alignItems: 'center',
+                            pt: 0.25
+                        }}>
                         <LinearProgress variant="determinate" value={completionPercentage} sx={{ width: '90%' }} />
                         <Typography variant="body2" sx={{ fontSize: '10px', mt: 0.5 }}>
                             ({completionPercentage.toPrecision(2)}% Complete)
