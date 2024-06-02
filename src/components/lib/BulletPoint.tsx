@@ -1,12 +1,12 @@
 import React, { ReactNode } from 'react';
 import { Box, Typography } from '@mui/material';
 
-interface BulletPointProps {
+export interface BulletPointProps {
     label: string;
     children: ReactNode;
 }
 
-const BulletPoint: React.FC<BulletPointProps> = ({ label, children }) => {
+export const BulletPoint: React.FC<BulletPointProps> = (props) => {
     return (
         <Box sx={{
             display: 'flex',
@@ -14,11 +14,9 @@ const BulletPoint: React.FC<BulletPointProps> = ({ label, children }) => {
             gap: 1
         }}>
             <Typography variant="body2" sx={{ minWidth: '122px' }}>
-                &bull; {label}
+                &bull; {props.label}
             </Typography>
-            {children}
+            {props.children}
         </Box>
     );
 };
-
-export default BulletPoint;

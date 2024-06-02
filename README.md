@@ -10,14 +10,13 @@
 
 ### ToDo/Bugs:
 - make theme consistent (font; some settings in index.html)
-- make dropdowns responsive (similar to process on sidebar)
 - copy tooltip text changes back to copy after displaying copied very briefly
 - change exports to ones used in AboutMe componenet & fix styling (using linting)
 - fix build process to get website to work on GitHub Pages (Failed to load module script: Expected a JavaScript module script but the server responded with a MIME type of "application/octet-stream". Strict MIME type checking is enforced for module scripts per HTML spec.)
+- 
 
 ### Future Features:
 - make sidebar collapsible
-- aspirations tab
 
 ### AI/ML Feature Ideas:
 - speechify website in my voice (i.e., explain my projects, resume, etc.)

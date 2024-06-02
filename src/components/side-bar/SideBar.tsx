@@ -1,10 +1,11 @@
 import { Box, Paper, Stack, Divider } from '@mui/material';
-import IconTextLinks from './profile-icontext/IconTextLinks';
+import { IconTextLinks } from './profile-icontext/IconTextLinks';
 import { EmailCopyTooltip } from './profile-icontext/CopyEmail';
 import ProfileAvatar from './profile-icontext/ProfileAvatar';
-import DegreeInformation from './degree-info/DegreeInformation';
+import { DegreeInformation } from './degree-info/DegreeInformation';
 
-export const SideBar: React.FC = () => {
+export const SideBar: React.FC = ({
+}) => {
   const degreeInfoMasters = {
     degreeType: "M.S.",
     degree: "Computer Science (Spec. in AI)",
@@ -38,8 +39,6 @@ export const SideBar: React.FC = () => {
     ]
   };
 
-
-
   return (
     <Box sx={{ maxWidth: { sm: '55vh' } }}>
       <Paper elevation={6} sx={{ p: 1, height: '100vh + 2px' }}>
@@ -63,5 +62,3 @@ export const SideBar: React.FC = () => {
     </Box>
   );
 };
-
-export default SideBar;

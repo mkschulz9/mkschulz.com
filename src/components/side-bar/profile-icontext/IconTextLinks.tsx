@@ -1,11 +1,12 @@
 import React from 'react';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import IconLink from './IconLink';
+import { IconLink } from './IconLink';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import HomeIcon from '@mui/icons-material/Home';
 
-const IconTextLinks: React.FC = () => {
+export const IconTextLinks: React.FC = ({
+}) => {
     return (
         <>
             <IconLink
@@ -29,5 +30,3 @@ const IconTextLinks: React.FC = () => {
         </>
     );
 };
-
-export default IconTextLinks;

@@ -1,11 +1,11 @@
 import { Box } from '@mui/material';
 import { ReactNode } from 'react';
 
-interface ResponsiveBoxProps {
+export interface ResponsiveBoxProps {
     children: ReactNode;
 }
 
-const ResponsiveBox: React.FC<ResponsiveBoxProps> = ({ children }) => {
+export const ResponsiveBox: React.FC<ResponsiveBoxProps> = (props) => {
     return (
         <Box
             sx={{
@@ -15,9 +15,7 @@ const ResponsiveBox: React.FC<ResponsiveBoxProps> = ({ children }) => {
                 gap: 0.5,
             }}
         >
-            {children}
+            {props.children}
         </Box>
     );
 };
-
-export default ResponsiveBox;

@@ -8,13 +8,13 @@ type IconLinkProps = {
     text: string;
 };
 
-const IconLink: React.FC<IconLinkProps> = ({ Icon, href, text }) => {
-    const content = href ? (
-        <Link href={href} target="_blank">
-            <Typography variant="body2">{text}</Typography>
+export const IconLink: React.FC<IconLinkProps> = (props) => {
+    const content = props.href ? (
+        <Link href={props.href} target="_blank">
+            <Typography variant="body2">{props.text}</Typography>
         </Link>
     ) : (
-        <Typography variant="body2">{text}</Typography>
+        <Typography variant="body2">{props.text}</Typography>
     );
 
     return (
@@ -24,10 +24,8 @@ const IconLink: React.FC<IconLinkProps> = ({ Icon, href, text }) => {
             alignItems: 'center',
             gap: 0.75
         }}>
-            <Icon />
+            <props.Icon />
             {content}
         </Stack>
     );
 };
-
-export default IconLink;

@@ -1,11 +1,10 @@
 import React from 'react';
-import SideBar from './side-bar/SideBar';
-import ResponsiveBox from './lib/ResponsiveBox';
-import DropDowns from './drop-downs/DropDowns';
+import { SideBar } from './side-bar/SideBar';
+import { ResponsiveBox } from './lib/ResponsiveBox';
+import { DropDowns } from './drop-downs/DropDowns';
 
-
-
-const App: React.FC = () => {
+export const App: React.FC = ({
+}) => {
   return (
     <ResponsiveBox>
       <SideBar />
@@ -13,5 +12,3 @@ const App: React.FC = () => {
     </ResponsiveBox >
   );
 };
-
-export default App;

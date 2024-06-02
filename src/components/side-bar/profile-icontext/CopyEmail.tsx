@@ -2,7 +2,8 @@ import { Stack, Tooltip, Typography } from "@mui/material";
 import { useState } from "react";
 import EmailIcon from '@mui/icons-material/Email';
 
-export const EmailCopyTooltip: React.FC = () => {
+export const EmailCopyTooltip: React.FC = ({
+}) => {
     const [open, setOpen] = useState(false);
     const [tooltipTitle, setTooltipTitle] = useState('Copy');
 
@@ -74,5 +75,3 @@ export const EmailCopyTooltip: React.FC = () => {
         </Stack>
     );
 };
-
-// tooltip could do with some minor improvements (i.e., 'copied' stay until hoveraway, spazzy tooltip at times)

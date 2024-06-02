@@ -1,11 +1,11 @@
 import React from 'react';
 import { LinearProgress, Box, Stack, Typography } from '@mui/material';
-import BulletPoint from '../../lib/BulletPoint';
-import CoursesCompleted from './CoursesCompleted';
+import { BulletPoint } from '../../lib/BulletPoint';
+import { CoursesCompleted } from './CoursesCompleted';
 import uscLogo from '../../../assets/usc_logo.png';
 import ucdavisLogo from '../../../assets/ucdavis_logo.png';
 
-interface DegreeInformationProps {
+export interface DegreeInformationProps {
     degreeType: string,
     degree: string,
     startDate: Date;
@@ -13,16 +13,10 @@ interface DegreeInformationProps {
     courses: string[];
 }
 
-const DegreeInformation: React.FC<DegreeInformationProps> = ({
-    degreeType,
-    degree,
-    startDate,
-    endDate,
-    courses
-}) => {
+export const DegreeInformation: React.FC<DegreeInformationProps> = (props) => {
     const calculateCompletionPercentage = () => {
-        const start = startDate.getTime();
-        const end = endDate.getTime();
+        const start = props.startDate.getTime();
+        const end = props.endDate.getTime();
         const now = new Date().getTime();
 
         if (now >= end) return 100;
@@ -31,7 +25,7 @@ const DegreeInformation: React.FC<DegreeInformationProps> = ({
     };
 
     const completionPercentage = calculateCompletionPercentage();
-    const graduationDate = endDate.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+    const graduationDate = props.endDate.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
 
     const colors = [
         '#c62828', // Dark Red
@@ -59,7 +53,7 @@ const DegreeInformation: React.FC<DegreeInformationProps> = ({
     const getColor = (index: number) => colors[index % colors.length];
 
     let logo = null;
-    if (degreeType === 'M.S.') {
+    if (props.degreeType === 'M.S.') {
         logo = uscLogo;
     } else {
         logo = ucdavisLogo;
@@ -77,7 +71,7 @@ const DegreeInformation: React.FC<DegreeInformationProps> = ({
                 </Box>
                 <Stack sx={{ display: 'flex', flexDirection: 'row', width: '100%' }}>
                     <Typography variant="body2">
-                        &bull; Degree: {degreeType} {degree}
+                        &bull; Degree: {props.degreeType} {props.degree}
                     </Typography>
                 </Stack>
                 <BulletPoint label="Degree Progress:">
@@ -100,10 +94,8 @@ const DegreeInformation: React.FC<DegreeInformationProps> = ({
                         &bull; Graduation: {graduationDate}
                     </Typography>
                 </Stack>
-                <CoursesCompleted courses={courses} getColor={getColor} />
+                <CoursesCompleted courses={props.courses} getColor={getColor} />
             </Stack >
         </Box >
     );
 };
-
-export default DegreeInformation;
