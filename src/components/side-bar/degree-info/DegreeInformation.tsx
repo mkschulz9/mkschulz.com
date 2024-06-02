@@ -1,5 +1,5 @@
-import React from 'react';
-import { LinearProgress, Box, Stack, Typography } from '@mui/material';
+import React, { useState } from 'react';
+import { LinearProgress, Box, Stack, Typography, Collapse, Paper } from '@mui/material';
 import { BulletPoint } from '../../lib/BulletPoint';
 import { CoursesCompleted } from './CoursesCompleted';
 import uscLogo from '../../../assets/usc_logo.png';
@@ -14,12 +14,16 @@ export interface DegreeInformationProps {
 }
 
 export const DegreeInformation: React.FC<DegreeInformationProps> = (props) => {
+    const [expanded, setExpanded] = useState(false);
+
     const calculateCompletionPercentage = () => {
         const start = props.startDate.getTime();
         const end = props.endDate.getTime();
         const now = new Date().getTime();
 
-        if (now >= end) return 100;
+        if (now >= end) {
+            return 100;
+        }
         if (now < start) return 0;
         return ((now - start) / (end - start)) * 100;
     };
@@ -67,34 +71,40 @@ export const DegreeInformation: React.FC<DegreeInformationProps> = (props) => {
                 alignItems: 'left',
             }}>
                 <Box sx={{ display: 'flex', justifyContent: 'center', pb: 0.75 }}>
-                    <img src={logo} style={{ maxWidth: '70%', height: 'auto' }} />
+                    <img
+                        src={logo}
+                        style={{ maxWidth: '50%', height: 'auto', cursor: 'pointer' }}
+                        onClick={() => setExpanded(!expanded)}
+                    />
                 </Box>
-                <Stack sx={{ display: 'flex', flexDirection: 'row', width: '100%' }}>
-                    <Typography variant="body2">
-                        &bull; Degree: {props.degreeType} {props.degree}
-                    </Typography>
-                </Stack>
-                <BulletPoint label="Degree Progress:">
-                    <Stack justifyContent='center'
-                        sx={{
-                            display: 'flex',
-                            flexDirection: 'column',
-                            width: '100%',
-                            alignItems: 'center',
-                            pt: 0.25
-                        }}>
-                        <LinearProgress variant="determinate" value={completionPercentage} sx={{ width: '90%' }} />
-                        <Typography variant="body2" sx={{ fontSize: '10px', mt: 0.5 }}>
-                            ({completionPercentage.toPrecision(2)}% Complete)
+                <Collapse in={expanded}>
+                    <Stack sx={{ display: 'flex', flexDirection: 'row', width: '100%' }}>
+                        <Typography variant="body2">
+                            &bull; Degree: {props.degreeType} {props.degree}
                         </Typography>
                     </Stack>
-                </BulletPoint>
-                <Stack sx={{ display: 'flex', flexDirection: 'row', width: '100%' }}>
-                    <Typography variant="body2">
-                        &bull; Graduation: {graduationDate}
-                    </Typography>
-                </Stack>
-                <CoursesCompleted courses={props.courses} getColor={getColor} />
+                    <BulletPoint label="Degree Progress:">
+                        <Stack justifyContent='center'
+                            sx={{
+                                display: 'flex',
+                                flexDirection: 'column',
+                                width: '100%',
+                                alignItems: 'center',
+                                pt: 0.25
+                            }}>
+                            <LinearProgress variant="determinate" value={completionPercentage} sx={{ width: '90%' }} />
+                            <Typography variant="body2" sx={{ fontSize: '10px', mt: 0.5 }}>
+                                ({completionPercentage.toFixed(0)}% Complete)
+                            </Typography>
+                        </Stack>
+                    </BulletPoint>
+                    <Stack sx={{ display: 'flex', flexDirection: 'row', width: '100%' }}>
+                        <Typography variant="body2">
+                            &bull; Graduation: {graduationDate}
+                        </Typography>
+                    </Stack>
+                    <CoursesCompleted courses={props.courses} getColor={getColor} />
+                </Collapse>
             </Stack >
         </Box >
     );
