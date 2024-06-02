@@ -5,7 +5,7 @@ import ProfileAvatar from './profile-icontext/ProfileAvatar';
 import DegreeInformation from './degree-info/DegreeInformation';
 
 export const SideBar: React.FC = () => {
-  const degreeInfo = {
+  const degreeInfoMasters = {
     degreeType: "M.S.",
     degree: "Computer Science (Spec. in AI)",
     startDate: new Date('2023-08-21'),
@@ -18,10 +18,32 @@ export const SideBar: React.FC = () => {
     ]
   };
 
+  const degreeInfoBatchelors = {
+    degreeType: "B.S.",
+    degree: "Computer Science",
+    startDate: new Date('2021-09-10'),
+    endDate: new Date('2023-06-10'),
+    courses: [
+      "Computer Architecture",
+      "Theory Computation",
+      "Probability & Statistics for CS",
+      "Web Programming",
+      "Artificial Intelligence",
+      "Operating Systems",
+      "Computer Networks",
+      "Machine Learning",
+      "Programming Languages",
+      "Deep Learning",
+      "Human-Computer Interaction"
+    ]
+  };
+
+
+
   return (
     <Box sx={{ maxWidth: { sm: '55vh' } }}>
       <Paper elevation={6} sx={{ p: 1, height: '100vh + 2px' }}>
-        <ProfileAvatar name='Matthew Schulz' />
+        <ProfileAvatar name='Matthew K. Schulz' />
         <Divider />
         <Stack sx={{
           display: 'flex',
@@ -34,7 +56,9 @@ export const SideBar: React.FC = () => {
           <EmailCopyTooltip />
         </Stack>
         <Divider />
-        <DegreeInformation {...degreeInfo} />
+        <DegreeInformation {...degreeInfoMasters} />
+        <Divider sx={{ pt: 1 }} />
+        <DegreeInformation {...degreeInfoBatchelors} />
       </Paper>
     </Box>
   );

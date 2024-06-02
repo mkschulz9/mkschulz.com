@@ -5,7 +5,7 @@ interface StyledTitleProps {
 }
 
 export const StyledTitle = styled(Typography)<StyledTitleProps>(({ fontSize }) => ({
-  textAlign: 'center',
+  textAlign: 'left',
   fontSize: `${fontSize}px`,
   fontFamily: 'Comfortaa',
   fontWeight: 'bold',

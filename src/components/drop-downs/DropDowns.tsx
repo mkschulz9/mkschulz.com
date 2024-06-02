@@ -13,12 +13,12 @@ const DropDowns: React.FC<DropDownsProps> = () => {
             display: 'flex',
             flexDirection: 'column',
             width: '100%',
-            border: '2px solid grey'
+            gap: 0.5
+            //border: '2px solid grey'
         }}>
-            <ExpandableListItem primary="PROJECT DEMOS" children={undefined}></ExpandableListItem>
+            <ExpandableListItem primary="PROJECT DEMOS" children={undefined} defaultOpen={true}></ExpandableListItem>
             <ExpandableListItem primary="ABOUT ME" children={<AboutMe />}></ExpandableListItem>
-            <ExpandableListItem primary="EDUCATION" children={<Education />}></ExpandableListItem>
-            <ExpandableListItem primary="WORK EXPERIENCE" children={undefined}></ExpandableListItem>
+            <ExpandableListItem primary="GOALS & ASPIRATIONS" children={<Education />}></ExpandableListItem>
         </Stack>
     );
 };

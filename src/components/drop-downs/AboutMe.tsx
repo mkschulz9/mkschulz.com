@@ -1,7 +1,8 @@
 import { Card, CardContent, CardMedia, Stack, Typography } from '@mui/material';
-import salvador_collage from '../../assets/Salvador.png'
-import lemonade from '../../assets/lemonade.webp'
-import cs from '../../assets/computer_science_ai.webp'
+import salvador_collage_img from '../../assets/Salvador.png'
+import lemonade_img from '../../assets/lemonade.webp'
+import cs_img from '../../assets/computer_science_ai.webp'
+import first_generation_img from '../../assets/first_generation.webp'
 
 export const AboutMe: React.FC = () => {
     return (
@@ -15,7 +16,7 @@ export const AboutMe: React.FC = () => {
             <Card sx={{ maxWidth: 345 }}>
                 <CardMedia
                     sx={{ height: 230 }}
-                    image={cs}
+                    image={cs_img}
                 />
                 <CardContent>
                     <Typography gutterBottom variant="h5">
@@ -28,16 +29,14 @@ export const AboutMe: React.FC = () => {
                     <Typography variant="body2" color="text.secondary">
                         Now, as I complete my M.S. in Computer Science specializing in AI, I have developed a
                         strong passion for this field, and I am constantly seeking opportunities to apply the
-                        concepts I learn in innovative ways that can solve real-world problems. My journey from a
-                        business major to a tech enthusiast underscores my adaptability and eagerness to embrace
-                        complex challenges, fueling my ambition to work, lead, and innovate in this dynamic field.
+                        concepts I learn in innovative ways that can solve real-world problems.
                     </Typography>
                 </CardContent>
             </Card>
             <Card sx={{ maxWidth: 345 }}>
                 <CardMedia
                     sx={{ height: 230 }}
-                    image={lemonade}
+                    image={lemonade_img}
                 />
                 <CardContent>
                     <Typography gutterBottom variant="h5">
@@ -59,7 +58,7 @@ export const AboutMe: React.FC = () => {
             <Card sx={{ maxWidth: 345 }}>
                 <CardMedia
                     sx={{ height: 230 }}
-                    image={salvador_collage}
+                    image={salvador_collage_img}
                 />
                 <CardContent>
                     <Typography gutterBottom variant="h5">
@@ -75,6 +74,27 @@ export const AboutMe: React.FC = () => {
                         embracing this challenge taught me resilience and the importance of stepping
                         out of my comfort zone. I value traveling and appreciate the diverse perspectives
                         and experiences it provides!
+                    </Typography>
+                </CardContent>
+            </Card>
+            <Card sx={{ maxWidth: 345 }}>
+                <CardMedia
+                    sx={{ height: 230 }}
+                    image={first_generation_img}
+                />
+                <CardContent>
+                    <Typography gutterBottom variant="h5">
+                        First Generation American
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                        I am a first-generation American. My Mother was born and raised in Spain, while
+                        my Father was born in Germany and raised in England. My parents met in England
+                        and moved to the Bay Area in the early 2000s, where I was then born in Berkeley, CA.
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                        While growing up, I had the privilege of visiting Spain, Germany, and England. These
+                        experiences widened my perspective and taught me to appreciate and be thankful for my
+                        life in the United States.
                     </Typography>
                 </CardContent>
             </Card>
