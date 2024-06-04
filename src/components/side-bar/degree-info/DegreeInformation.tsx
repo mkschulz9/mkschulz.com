@@ -4,6 +4,7 @@ import { BulletPoint } from '../../lib/BulletPoint';
 import { CoursesCompleted } from './CoursesCompleted';
 import uscLogo from '../../../assets/usc_logo.png';
 import ucdavisLogo from '../../../assets/ucdavis_logo.png';
+import dvcLogo from '../../../assets/dvc_logo.png'
 
 export interface DegreeInformationProps {
     degreeType: string,
@@ -11,6 +12,7 @@ export interface DegreeInformationProps {
     startDate: Date;
     endDate: Date;
     courses: string[];
+    gpa?: string;
 }
 
 export const DegreeInformation: React.FC<DegreeInformationProps> = (props) => {
@@ -59,8 +61,10 @@ export const DegreeInformation: React.FC<DegreeInformationProps> = (props) => {
     let logo = null;
     if (props.degreeType === 'M.S.') {
         logo = uscLogo;
-    } else {
+    } else if (props.degreeType === 'B.S.') {
         logo = ucdavisLogo;
+    } else {
+        logo = dvcLogo;
     }
 
     return (
@@ -100,7 +104,7 @@ export const DegreeInformation: React.FC<DegreeInformationProps> = (props) => {
                     </BulletPoint>
                     <Stack sx={{ display: 'flex', flexDirection: 'row', width: '100%' }}>
                         <Typography variant="body2">
-                            &bull; Graduation: {graduationDate}
+                            &bull; Graduation: {graduationDate} {props.gpa && `(GPA: ${props.gpa})`}
                         </Typography>
                     </Stack>
                     <CoursesCompleted courses={props.courses} getColor={getColor} />
