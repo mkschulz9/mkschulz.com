@@ -18,6 +18,7 @@
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
+    "@commitlint/config-conventional": "^19.2.2",
     "@eslint/js": "^9.2.0",
     "@mui/types": "^7.2.14",
     "@types/node": "^20.12.10",
