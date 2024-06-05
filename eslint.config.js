@@ -1,23 +1,32 @@
-{
-    "env": {
-        "browser": true,
-            "es2021": true
+module.exports = {
+  env: {
+    browser: true,
+    es2021: true
+  },
+  extends: [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
+  ],
+  parser: "@typescript-eslint/parser",
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true
     },
-    "extends": [
-        "eslint:recommended",
-        "plugin:react/recommended"
-    ],
-        "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "ecmaVersion": 12,
-            "sourceType": "module"
-    },
-    "plugins": [
-        "react"
-    ],
-        "rules": {
-        "react/react-in-jsx-scope": "off"
-    }
-}
+    ecmaVersion: 2021,
+    sourceType: "module"
+  },
+  plugins: [
+    "react",
+    "react-hooks",
+    "@typescript-eslint",
+    "prettier"
+  ],
+  rules: {
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "prettier/prettier": "warn"
+  }
+};

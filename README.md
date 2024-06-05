@@ -1,22 +1,36 @@
 # Matthew Schulz's Persoanl Website
-- Welcome to the behind the scenes of Matthew Schulz's personal website! This website is a React application built from scratch that showcases some of Matthew's projects and more. The website is hosted on GitHub Pages and can be accessed at [mkschulz9.github.io](https://mkschulz9.github.io).
-- This project is a work in progress and there are cool features and updates to come!
+
+- Welcome to the behind the scenes of Matthew Schulz's personal website! This
+  website is a React application built from scratch that showcases some of
+  Matthew's projects and more. The website is hosted on GitHub Pages and can be
+  accessed at [mkschulz9.github.io](https://mkschulz9.github.io).
+- This project is a work in progress and there are cool features and updates to
+  come!
 
 ## Technologies Used
+
 - [Blank]
 
 ## Features
+
 - [Blank]
 
-### ToDo/Bugs:
-- make theme consistent (font; some settings in index.html)
+### Bugs:
+
 - copy tooltip text changes back to copy after displaying copied very briefly
-- change exports to ones used in AboutMe componenet & fix styling (using linting)
-- fix build process to get website to work on GitHub Pages (Failed to load module script: Expected a JavaScript module script but the server responded with a MIME type of "application/octet-stream". Strict MIME type checking is enforced for module scripts per HTML spec.)
-- change way favicon is loaded
 
 ### Future Features:
+
 - make sidebar collapsible
 
 ### AI/ML Feature Ideas:
+
 - speechify website in my voice (i.e., explain my projects, resume, etc.)
+
+### ToDo:
+
+- make theme consistent (font; some settings in index.html)
+- make sidebar collapsible
+- figure out why linting is not working (ESLint) -> thinks files are ignored
+  when I do not set any ignore patterns
+- Add tests in CI in the future using Cypress
