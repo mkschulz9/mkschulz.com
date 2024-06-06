@@ -18,7 +18,6 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '18'
-          cache: 'pnpm'  # Enabling built-in caching for pnpm
 
       - name: Install Dependencies
         run: pnpm install
@@ -35,7 +34,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: build
-    if: github.ref == 'refs/heads/main'  # Ensures deployment happens only on main branch
+    if: github.ref == 'refs/heads/main'
     steps:
       - name: Download artifact
         uses: actions/download-artifact@v2
@@ -46,5 +45,5 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}  # Ensure this secret is correctly set in your repository settings
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build
