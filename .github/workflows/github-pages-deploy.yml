@@ -17,8 +17,8 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '18'
-          cache: 'pnpm'
+          node-version: '18.12'
+          # cache: 'pnpm'
 
       - name: Install pnpm
         run: npm install -g pnpm
@@ -27,7 +27,7 @@ jobs:
         run: pnpm install
 
       - name: Build the project
-        run: pnpm run build
+        run: pnpm build
 
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v2
