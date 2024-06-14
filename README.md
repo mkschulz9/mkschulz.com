@@ -5,6 +5,9 @@
   Matthew's projects and more. The website is hosted on GitHub Pages and can be
   accessed at [mkschulz9.github.io](https://mkschulz9.github.io).
 
+\*Note: This website is a work in progress and is constantly being updated. This
+is not the final version.
+
 | Type                          | Name                                                               | Related Folder(s) / File(s)                                        | Description                                                                             |
 | ----------------------------- | ------------------------------------------------------------------ | ------------------------------------------------------------------ | --------------------------------------------------------------------------------------- |
 | Package Manager               | [pnpm](https://pnpm.io/)                                           | [package.json](package.json) <br> [pnpm-lock.yaml](pnpm-lock.yaml) | Package manager that facilitates efficient management and installation of dependencies. |
@@ -47,26 +50,3 @@ When Git commit is made, the following happens in the background:
 - [commitlint](https://github.com/conventional-changelog/commitlint) checks if
   the commit message meets the
   [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) format.
-
-## Development
-
-### Bugs:
-
-- images in about me are taking too long to load on deployed site
-- figure out why linting is not working (ESLint) -> thinks files are ignored
-  when I do not set any ignore patterns
-  - I think it is because I am using a different version of ESLint than the one
-    that is installed in the project. I will try to install the same version of
-    ESLint that I am using globally in the project.
-- smallest view when components are side by side -> dropdowns get too small
-
-### AI/ML Feature Ideas:
-
-- speechify website in my voice (i.e., explain my projects, resume, etc.)
-
-### ToDo:
-
-- make theme consistent (font; some settings in index.html)
-- make sidebar collapsible
-- add analytics to website
-- Add tests in CI in the future using Cypress (if tests are needed)
