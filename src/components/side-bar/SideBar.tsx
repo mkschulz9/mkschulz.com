@@ -58,7 +58,7 @@ export const SideBar: React.FC = ({}) => {
   };
 
   return (
-    <Box sx={{ maxWidth: { sm: '50vh' } }}>
+    <Box sx={{ maxWidth: { sm: '55vh' } }}>
       <Paper elevation={6} sx={{ p: 1 }}>
         <ProfileAvatar name="Matthew K. Schulz" />
         <Divider />
