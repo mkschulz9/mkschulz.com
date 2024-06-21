@@ -14,6 +14,8 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.23.0",
+    "react-swipeable-views": "^0.14.0",
+    "react-swipeable-views-utils": "^0.14.0",
     "vite": "^5.2.11",
     "web-vitals": "^2.1.4"
   },
@@ -22,6 +24,8 @@
     "@eslint/js": "^9.2.0",
     "@mui/types": "^7.2.14",
     "@types/node": "^20.12.10",
+    "@types/react-swipeable-views": "^0.13.5",
+    "@types/react-swipeable-views-utils": "^0.13.7",
     "@typescript-eslint/eslint-plugin": "^7.8.0",
     "@typescript-eslint/parser": "^7.8.0",
     "@vitejs/plugin-react": "^4.2.1",
