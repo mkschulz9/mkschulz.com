@@ -17,6 +17,8 @@ import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import emotion_classification from '../../assets/emotion_classification.jpg';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import bits_background from '../../assets/bits_background.webp';
+import personal_website_github from '../../assets/personal_website_github.png';
+import poster_img from '../../assets/mindmap_poster.jpg';
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
@@ -50,7 +52,7 @@ export const ProjectDemos: React.FC = () => {
     {
       name: 'Personal Chatbot',
       description:
-        'I fine-tuned an LLM, training it on information about my education, work experience, and more! Try it out and learn more about me.',
+        'I fine-tuned an LLM, training it on information about my education, work experience, aspirations, and more! Visit this link to try it out and learn more about me.',
       img: 'https://via.placeholder.com/400x250?text=Project+1',
       githubLink: 'blank',
     },
@@ -58,14 +60,14 @@ export const ProjectDemos: React.FC = () => {
       name: 'mkschulz9.github.io',
       description:
         'This website! I built it from scratch, incorporating modern web development practices, including CI/CD actions, automatic linting and formatting, and commit hooks.',
-      img: 'https://via.placeholder.com/400x250?text=Project+2',
+      img: personal_website_github,
       githubLink: 'https://github.com/mkschulz9/mkschulz9.github.io',
     },
     {
       name: 'Emotion Classification',
       description:
         'In this group project, I led a team of three in developing two custom deep-learning models for classifying emotions across facial images and textual data.',
-      img: emotion_classification,
+      img: poster_img,
       githubLink:
         'https://github.com/marreddysainikhilreddy/emotion-classification',
     },

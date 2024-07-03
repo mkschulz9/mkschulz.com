@@ -52,7 +52,7 @@ export const AboutMe: React.FC = () => {
       title: 'Passion for Computer Science & AI',
       image: cs_img,
       content: [
-        'Fun fact: I began college as a business major. After my first semester, I knew it was not the right fit, so I switched to computer science, and the rest is history.',
+        'Fun fact: I began college as a business major. After my first semester, I knew it was not the right fit, so I switched to computer science, and the rest is history. I fell in love with the fact that whatever idea you could dream up, you could build and bring to life!',
         'Now, as I complete my M.S. in Computer Science specializing in AI, I have developed a strong passion for this field, and I am constantly seeking opportunities to apply the concepts I learn in innovative ways that can solve real-world problems.',
       ],
     },
@@ -76,7 +76,7 @@ export const AboutMe: React.FC = () => {
       title: 'First Generation American',
       image: first_generation_img,
       content: [
-        'I am a first-generation American. My Mother was born and raised in Spain, while my Father was born in Germany and raised in England. My parents met in England and moved to the Bay Area in the early 2000s, where I was then born in Berkeley, CA.',
+        'I am a first-generation American. My mother was born and raised in Spain, while my father was born in Germany and raised in England. My parents met in England and moved to the Bay Area in the early 2000s, where I was then born in Berkeley, CA.',
         'While growing up, I had the privilege of visiting Spain, Germany, and England. These experiences widened my perspective and taught me to appreciate and be thankful for my life in the United States.',
       ],
     },
@@ -110,12 +110,12 @@ export const AboutMe: React.FC = () => {
             W&bull;E&bull;L&bull;C&bull;O&bull;M&bull;E
           </Typography>
           <Typography variant="body1" sx={{ mt: 2 }}>
-            Welcome to my personal website, which I've built from the ground up!
-            This site is a vibrant showcase of everything about me. Here, you'll
-            find a featured display of my projects, detailing the challenges
-            I've tackled and the solutions I've engineered in machine learning
-            and computer science. Additionally, I've included sections about my
-            educational background and work experience to give you a
+            Welcome to my personal website, which I have built from the ground
+            up! This site is a showcase of everything about me. Here, you will
+            find a featured display of my projects, detailing the challenges I
+            have tackled and the solutions I have engineered in machine learning
+            and computer science. Additionally, I have included sections about
+            my educational background and work experience to give you a
             well-rounded view of my expertise and professional growth.
           </Typography>
           <Typography variant="body1" sx={{ mt: 1 }}>
@@ -154,7 +154,12 @@ export const AboutMe: React.FC = () => {
                   {card.title}
                 </Typography>
                 {card.content.map((paragraph, idx) => (
-                  <Typography key={idx} variant="body2" color="text.secondary">
+                  <Typography
+                    key={idx}
+                    variant="body2"
+                    color="text.secondary"
+                    sx={{ mb: 1 }}
+                  >
                     {paragraph}
                   </Typography>
                 ))}
@@ -167,6 +172,7 @@ export const AboutMe: React.FC = () => {
             borderBottomLeftRadius: '10px',
             borderBottomRightRadius: '10px',
             bgcolor: 'secondary.main',
+            mt: -2,
           }}
           steps={4}
           position="static"

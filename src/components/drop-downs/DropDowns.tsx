@@ -1,11 +1,13 @@
 import { Stack } from '@mui/material';
 import { ExpandableListItem } from '../lib/ExpandableListItem';
 import { AboutMe } from './AboutMe';
-import { Education } from './blank';
+import { GoalsAspirations } from './GoalsAspirations';
 import { ProjectDemos } from './FeaturedProjects';
+import { Resume } from './Resume';
 import BubbleChartIcon from '@mui/icons-material/BubbleChart';
 import CodeIcon from '@mui/icons-material/Code';
 import FlagIcon from '@mui/icons-material/Flag';
+import DescriptionIcon from '@mui/icons-material/Description';
 
 export const DropDowns: React.FC = ({}) => {
   return (
@@ -15,6 +17,7 @@ export const DropDowns: React.FC = ({}) => {
         flexDirection: 'column',
         width: '100%',
         gap: 0.5,
+        border: '2px solid blue',
       }}
     >
       <ExpandableListItem
@@ -30,8 +33,13 @@ export const DropDowns: React.FC = ({}) => {
       ></ExpandableListItem>
       <ExpandableListItem
         primary="GOALS & ASPIRATIONS"
-        children={<Education />}
+        children={<GoalsAspirations />}
         icon={<FlagIcon />}
+      ></ExpandableListItem>
+      <ExpandableListItem
+        primary="Resume"
+        children={<Resume />}
+        icon={<DescriptionIcon />}
       ></ExpandableListItem>
     </Stack>
   );
