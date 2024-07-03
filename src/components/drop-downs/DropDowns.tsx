@@ -17,7 +17,6 @@ export const DropDowns: React.FC = ({}) => {
         flexDirection: 'column',
         width: '100%',
         gap: 0.5,
-        border: '2px solid blue',
       }}
     >
       <ExpandableListItem
