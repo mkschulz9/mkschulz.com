@@ -21,7 +21,7 @@ import { KeyboardArrowLeft, KeyboardArrowRight } from '@mui/icons-material';
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
-export const AboutMe: React.FC = () => {
+export const WelcomeAboutMe: React.FC = () => {
   const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
   const [interval, setInterval] = React.useState(8500);

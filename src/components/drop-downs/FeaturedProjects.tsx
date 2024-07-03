@@ -19,6 +19,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import bits_background from '../../assets/bits_background.webp';
 import personal_website_github from '../../assets/personal_website_github.png';
 import poster_img from '../../assets/mindmap_poster.jpg';
+import background from '../../assets/background.jpg';
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
@@ -81,7 +82,7 @@ export const ProjectDemos: React.FC = () => {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        backgroundImage: `url(${bits_background})`,
+        backgroundImage: `url(${background})`,
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
