@@ -2,7 +2,7 @@ import { Stack } from '@mui/material';
 import { ExpandableListItem } from '../lib/ExpandableListItem';
 import { WelcomeAboutMe } from './WelcomeAboutMe';
 import { GoalsAspirations } from './GoalsAspirations';
-import { ProjectDemos } from './FeaturedProjects';
+import { FeaturedProjects } from './FeaturedProjects';
 import { Resume } from './Resume';
 import { Feedback } from './Feedback';
 import BubbleChartIcon from '@mui/icons-material/BubbleChart';
@@ -29,7 +29,7 @@ export const DropDowns: React.FC = ({}) => {
       ></ExpandableListItem>
       <ExpandableListItem
         primary="FEATURED PROJECTS"
-        children={<ProjectDemos />}
+        children={<FeaturedProjects />}
         icon={<CodeIcon />}
       ></ExpandableListItem>
       <ExpandableListItem
@@ -38,7 +38,7 @@ export const DropDowns: React.FC = ({}) => {
         icon={<FlagIcon />}
       ></ExpandableListItem>
       <ExpandableListItem
-        primary="RESUME"
+        primary="WORK EXPERIENCE"
         children={<Resume />}
         icon={<DescriptionIcon />}
       ></ExpandableListItem>

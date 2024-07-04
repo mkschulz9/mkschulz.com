@@ -1,12 +1,12 @@
 import { Stack, Avatar } from '@mui/material';
-import { StyledTitle } from '../../lib/StyledTitle';
-import davis_portrait from '../../../assets/davis_portrait.jpg';
+import { StyledTitle } from '../lib/StyledTitle';
+import davis_portrait from '../../assets/davis_portrait.jpg';
 
-interface ProfileAvatarProps {
+interface PortraitNameProps {
   name: string;
 }
 
-export const ProfileAvatar: React.FC<ProfileAvatarProps> = props => {
+export const PortraitName: React.FC<PortraitNameProps> = props => {
   return (
     <Stack
       sx={{
@@ -18,8 +18,8 @@ export const ProfileAvatar: React.FC<ProfileAvatarProps> = props => {
       <Avatar
         src={davis_portrait}
         sx={{
-          width: { xs: 180, sm: 210 },
-          height: { xs: 180, sm: 210 },
+          width: { xs: 220, md: 210 },
+          height: { xs: 220, md: 210 },
         }}
       />
       <StyledTitle fontSize={35}>{props.name}</StyledTitle>

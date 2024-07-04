@@ -53,7 +53,7 @@ export const WelcomeAboutMe: React.FC = () => {
       image: cs_img,
       content: [
         'Fun fact: I began college as a business major. After my first semester, I knew it was not the right fit, so I switched to computer science, and the rest is history. I fell in love with the fact that whatever idea you could dream up, you could build and bring to life!',
-        'Now, as I complete my M.S. in Computer Science specializing in AI, I have developed a strong passion for this field, and I am constantly seeking opportunities to apply the concepts I learn in innovative ways that can solve real-world problems.',
+        'Now, as I complete my M.S. in Computer Science specializing in AI, I have developed a strong passion for this field, and am constantly seeking opportunities to apply the concepts I learn in innovative ways that can solve real-world problems.',
       ],
     },
     {
@@ -110,23 +110,23 @@ export const WelcomeAboutMe: React.FC = () => {
             W&bull;E&bull;L&bull;C&bull;O&bull;M&bull;E
           </Typography>
           <Typography variant="body1" sx={{ mt: 2 }}>
-            Welcome to my personal website, which I have built from the ground
-            up! This site is a showcase of everything about me. Here, you will
-            find a featured display of my projects, detailing the challenges I
-            have tackled and the solutions I have engineered in machine learning
-            and computer science. Additionally, I have included sections about
-            my educational background and work experience to give you a
-            well-rounded view of my expertise and professional growth.
+            Welcome to my personal website, built from scratch! This site
+            showcases everything about me. Here, you will find a featured
+            display of my projects detailing the challenges I have tackled and
+            the solutions I have engineered in machine learning and computer
+            science. Additionally, I have included sections about my educational
+            background and work experience to give you a well-rounded view of my
+            expertise and professional growth.
           </Typography>
           <Typography variant="body1" sx={{ mt: 1 }}>
             But that's not all—this website is also a window into the lighter
             side of my life. Dive into fun facts about me, explore my varied
-            hobbies, and discover what drives my aspirations.
+            hobbies, and discover my goals and aspirations.
           </Typography>
           <Typography variant="body1" sx={{ mt: 1 }}>
-            Thank you for visiting. Whether you're a potential collaborator, a
+            Thank you for visiting. Whether you're a potential collaborator,
             recruiter, or simply here out of curiosity, I hope you enjoy
-            exploring my site and leave inspired by what you find!
+            exploring my site and leave inspired by what you find. Cheers!
           </Typography>
         </Box>
       </Paper>

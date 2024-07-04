@@ -23,7 +23,7 @@ import background from '../../assets/background.jpg';
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
-export const ProjectDemos: React.FC = () => {
+export const FeaturedProjects: React.FC = () => {
   const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
   const [interval, setInterval] = React.useState(8500);

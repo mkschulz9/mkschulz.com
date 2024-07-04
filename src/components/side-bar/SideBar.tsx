@@ -1,8 +1,12 @@
-import { Box, Paper, Stack, Divider } from '@mui/material';
-import { IconTextLinks } from './profile-icontext/IconTextLinks';
-import { EmailCopyTooltip } from './profile-icontext/CopyEmail';
-import { ProfileAvatar } from './profile-icontext/ProfileAvatar';
+import { Paper, Stack, Divider } from '@mui/material';
+import { EmailCopyTooltip } from './CopyEmail';
+import { PortraitName } from './PortraitName';
 import { DegreeInformation } from './degree-info/DegreeInformation';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import { IconText } from './IconText';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import HomeIcon from '@mui/icons-material/Home';
 
 export const SideBar: React.FC = ({}) => {
   const degreeInfoMasters = {
@@ -58,9 +62,9 @@ export const SideBar: React.FC = ({}) => {
   };
 
   return (
-    <Box sx={{ maxWidth: { sm: '55vh' } }}>
+    <Stack sx={{ maxWidth: { md: '52vh' } }}>
       <Paper elevation={6} sx={{ p: 1 }}>
-        <ProfileAvatar name="Matthew K. Schulz" />
+        <PortraitName name="Matthew K. Schulz" />
         <Divider />
         <Stack
           sx={{
@@ -71,7 +75,18 @@ export const SideBar: React.FC = ({}) => {
             pb: 1,
           }}
         >
-          <IconTextLinks />
+          <IconText
+            Icon={LinkedInIcon}
+            href="https://www.linkedin.com/in/matthew--schulz/"
+            text="LinkedIn"
+          />
+          <IconText
+            Icon={GitHubIcon}
+            href="https://github.com/mkschulz9"
+            text="GitHub"
+          />
+          <IconText Icon={LocationOnIcon} text="Los Angeles, CA" />
+          <IconText Icon={HomeIcon} text="Bay Area, CA" />
           <EmailCopyTooltip />
         </Stack>
         <Divider />
@@ -81,6 +96,6 @@ export const SideBar: React.FC = ({}) => {
         <Divider sx={{ pt: 1 }} />
         <DegreeInformation {...degreeInfoAssociates} />
       </Paper>
-    </Box>
+    </Stack>
   );
 };
