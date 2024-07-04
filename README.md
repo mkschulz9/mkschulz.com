@@ -5,8 +5,8 @@
   Matthew's projects and more. The website is hosted on GitHub Pages and can be
   accessed at [mkschulz9.github.io](https://mkschulz9.github.io).
 
-\*Note: This website is a work in progress and is constantly being updated. This
-is not the final version.
+> **_NOTE:_** This website is a work in progress and is constantly being
+> updated.
 
 | Type                | Name                                                               | Related Folder(s) / File(s)                                        | Description                                                                             |
 | ------------------- | ------------------------------------------------------------------ | ------------------------------------------------------------------ | --------------------------------------------------------------------------------------- |
