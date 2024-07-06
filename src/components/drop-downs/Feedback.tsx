@@ -107,7 +107,7 @@ export const Feedback: React.FC = () => {
           bgcolor: 'secondary.main',
           p: 2.5,
           borderRadius: '5px',
-          width: '50%',
+          width: '90%',
         }}
       >
         <form onSubmit={handleSubmit}>

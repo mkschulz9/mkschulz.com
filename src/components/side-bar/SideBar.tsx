@@ -20,6 +20,7 @@ export const SideBar: React.FC = ({}) => {
       'Design & Analysis of Algorithms',
       'Foundations of AI',
     ],
+    defaultOpen: true,
   };
 
   const degreeInfoBatchelors = {

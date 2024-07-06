@@ -19,10 +19,11 @@ export interface DegreeInformationProps {
   endDate: Date;
   courses: string[];
   gpa?: string;
+  defaultOpen?: Boolean;
 }
 
 export const DegreeInformation: React.FC<DegreeInformationProps> = props => {
-  const [expanded, setExpanded] = useState(false);
+  const [expanded, setExpanded] = useState(props.defaultOpen ?? false);
 
   const calculateCompletionPercentage = () => {
     const start = props.startDate.getTime();
