@@ -3,13 +3,13 @@ import { ExpandableListItem } from '../lib/ExpandableListItem';
 import { WelcomeAboutMe } from './WelcomeAboutMe';
 import { GoalsAspirations } from './GoalsAspirations';
 import { FeaturedProjects } from './FeaturedProjects';
-import { Resume } from './Resume';
+import { WorkExperience } from './WorkExperience';
 import { Feedback } from './Feedback';
 import BubbleChartIcon from '@mui/icons-material/BubbleChart';
 import CodeIcon from '@mui/icons-material/Code';
 import FlagIcon from '@mui/icons-material/Flag';
-import DescriptionIcon from '@mui/icons-material/Description';
 import ForumIcon from '@mui/icons-material/Forum';
+import WorkHistoryIcon from '@mui/icons-material/WorkHistory';
 
 export const DropDowns: React.FC = ({}) => {
   return (
@@ -39,8 +39,8 @@ export const DropDowns: React.FC = ({}) => {
       ></ExpandableListItem>
       <ExpandableListItem
         primary="WORK EXPERIENCE"
-        children={<Resume />}
-        icon={<DescriptionIcon />}
+        children={<WorkExperience />}
+        icon={<WorkHistoryIcon />}
       ></ExpandableListItem>
       <ExpandableListItem
         primary="FEEDBACK"

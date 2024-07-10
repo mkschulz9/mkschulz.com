@@ -38,7 +38,7 @@ const goalsData = [
     id: 5,
     title: '10 Year Goal',
     description:
-      'In ten years, I aspire to grow my company to one million users while keeping the higher purpose of positive impact a focus.',
+      'In ten years, I aspire to grow my company to over one million users while keeping the higher purpose of positive impact a focus.',
     position: { top: '76%', left: '15%' },
   },
   {
@@ -91,10 +91,10 @@ export const GoalsAspirations: React.FC = () => {
         }}
       >
         <Typography variant="body1">
-          Welcome to the interactive roadmap of my goals and aspirations! This
+          Explore an interactive roadmap of my goals and aspirations! This
           visual guide represents key milestones I aim to achieve in the coming
-          years. Each pin on the roadmap corresponds to a specific goal or
-          vision, marked by its expected time frame.
+          years. Each waypoint corresponds to a specific goal or vision, marked
+          by its expected time frame.
         </Typography>
         <Typography variant="body1" sx={{ mt: 2 }}>
           Click on the points on the roadmap to uncover more about the
@@ -156,6 +156,7 @@ export const GoalsAspirations: React.FC = () => {
             vertical: 'bottom',
             horizontal: 'left',
           }}
+          sx={{ maxWidth: '800px' }}
         >
           <Stack sx={{ p: 0.5, pl: 1.5 }}>
             <Stack

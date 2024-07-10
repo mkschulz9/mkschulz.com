@@ -14,12 +14,10 @@ import MobileStepper from '@mui/material/MobileStepper';
 import Button from '@mui/material/Button';
 import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
-import emotion_classification from '../../assets/emotion_classification.jpg';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import bits_background from '../../assets/bits_background.webp';
+import bits_background from '../../assets/bits_background.jpg';
 import personal_website_github from '../../assets/personal_website_github.png';
 import poster_img from '../../assets/mindmap_poster.jpg';
-import background from '../../assets/background.jpg';
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
@@ -82,7 +80,7 @@ export const FeaturedProjects: React.FC = () => {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        backgroundImage: `url(${background})`,
+        backgroundImage: `url(${bits_background})`,
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
