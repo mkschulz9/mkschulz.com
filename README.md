@@ -42,7 +42,7 @@ in [.github/workflows](.github/workflows).
 
 ## Git Hooks
 
-When Git commit is made, the following happens in the background:
+When a Git commit is made, the following happens in the background:
 
 - [ESLint](https://eslint.org/) and [Prettier](https://prettier.io/) lint and
   format the staged code.

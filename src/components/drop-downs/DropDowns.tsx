@@ -1,5 +1,5 @@
 import { Stack } from '@mui/material';
-import { ExpandableListItem } from '../lib/ExpandableListItem';
+import { ExpandableList } from '../lib/ExpandableList';
 import { WelcomeAboutMe } from './WelcomeAboutMe';
 import { GoalsAspirations } from './GoalsAspirations';
 import { FeaturedProjects } from './FeaturedProjects';
@@ -21,32 +21,32 @@ export const DropDowns: React.FC = ({}) => {
         gap: 0.5,
       }}
     >
-      <ExpandableListItem
+      <ExpandableList
         primary="WELCOME & ABOUT ME"
         children={<WelcomeAboutMe />}
         defaultOpen={true}
         icon={<BubbleChartIcon />}
-      ></ExpandableListItem>
-      <ExpandableListItem
+      ></ExpandableList>
+      <ExpandableList
         primary="FEATURED PROJECTS"
         children={<FeaturedProjects />}
         icon={<CodeIcon />}
-      ></ExpandableListItem>
-      <ExpandableListItem
+      ></ExpandableList>
+      <ExpandableList
         primary="GOALS & ASPIRATIONS"
         children={<GoalsAspirations />}
         icon={<FlagIcon />}
-      ></ExpandableListItem>
-      <ExpandableListItem
+      ></ExpandableList>
+      <ExpandableList
         primary="WORK EXPERIENCE"
         children={<WorkExperience />}
         icon={<WorkHistoryIcon />}
-      ></ExpandableListItem>
-      <ExpandableListItem
+      ></ExpandableList>
+      <ExpandableList
         primary="FEEDBACK"
         children={<Feedback />}
         icon={<ForumIcon />}
-      ></ExpandableListItem>
+      ></ExpandableList>
     </Stack>
   );
 };

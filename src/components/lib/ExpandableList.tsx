@@ -9,7 +9,7 @@ import {
 } from '@mui/material';
 import React, { ReactNode, useState } from 'react';
 
-export interface ExpandableListItemProps {
+export interface ExpandableListProps {
   primary: string;
   secondary?: string;
   children: ReactNode;
@@ -17,7 +17,7 @@ export interface ExpandableListItemProps {
   icon: ReactNode;
 }
 
-export const ExpandableListItem: React.FC<ExpandableListItemProps> = props => {
+export const ExpandableList: React.FC<ExpandableListProps> = props => {
   const [expanded, setExpanded] = useState<boolean>(props.defaultOpen || false);
 
   return (
