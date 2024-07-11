@@ -48,24 +48,24 @@ export const FeaturedProjects: React.FC = () => {
   };
 
   const projects = [
-    {
+    /*{
       name: 'Personal Chatbot',
       description:
         'I fine-tuned an LLM, training it on information about my education, work experience, aspirations, and more! Visit this link to try it out and learn more about me.',
       img: 'https://via.placeholder.com/400x250?text=Project+1',
       githubLink: 'blank',
-    },
+    },*/
     {
       name: 'mkschulz9.github.io',
       description:
-        'This website! I built it from scratch, incorporating modern web development practices, including CI/CD actions, automatic linting and formatting, and commit hooks.',
+        'This website! I built it from scratch, incorporating modern web development practices, including CI/CD actions, automatic linting and formatting, and commit hooks. Check out the link below to see how it all works under the hood!',
       img: personal_website_github,
       githubLink: 'https://github.com/mkschulz9/mkschulz9.github.io',
     },
     {
       name: 'Emotion Classification',
       description:
-        'In this group project, I led a team of three in developing two custom deep-learning models for classifying emotions across facial images and textual data.',
+        'In this group project, I led a team of three in developing two custom deep-learning models for classifying emotions across facial images and textual data. Read our detailed report by visiting the link below.',
       img: poster_img,
       githubLink:
         'https://github.com/marreddysainikhilreddy/emotion-classification',

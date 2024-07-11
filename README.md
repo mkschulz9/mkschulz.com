@@ -25,9 +25,9 @@
 CI/CD pipelines are implemented using GitHub Actions. Workflow files are defined
 in [.github/workflows](.github/workflows).
 
-| Pipeline                                                                    | Deployed site                                                  | Trigger                  | Description                    |
-| --------------------------------------------------------------------------- | -------------------------------------------------------------- | ------------------------ | ------------------------------ |
-| [github-pages-deploy.yml](.github/workflows/github-pages-deploy.yml) (Prod) | [uscautodrivelab.github.io](https://uscautodrivelab.github.io) | on Push to `main` branch | Build and deploy to prod site. |
+| Pipeline                                                                    | Deployed site                                      | Trigger                  | Description                    |
+| --------------------------------------------------------------------------- | -------------------------------------------------- | ------------------------ | ------------------------------ |
+| [github-pages-deploy.yml](.github/workflows/github-pages-deploy.yml) (Prod) | [mkschulz9.github.io](https://mkschulz9.github.io) | on Push to `main` branch | Build and deploy to prod site. |
 
 ### Explanation of Steps Defined in `github-pages-deploy.yml`
 

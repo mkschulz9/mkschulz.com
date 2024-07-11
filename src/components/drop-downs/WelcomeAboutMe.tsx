@@ -126,7 +126,7 @@ export const WelcomeAboutMe: React.FC = () => {
           <Typography variant="body1" sx={{ mt: 1 }}>
             Thank you for visiting. Whether you're a potential collaborator,
             recruiter, or simply here out of curiosity, I hope you enjoy
-            exploring my site and leave inspired by what you find. Cheers!
+            exploring and leave inspired by what you find!
           </Typography>
         </Box>
       </Paper>
