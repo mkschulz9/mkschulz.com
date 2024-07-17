@@ -35,13 +35,38 @@ export const Feedback: React.FC = () => {
     setComments(event.target.value);
   };
 
-  const handleSubmit = (event: React.FormEvent) => {
+  const handleSubmit = async (event: { preventDefault: () => void }) => {
     event.preventDefault();
-    setFirstName('');
-    setEmail('');
-    setComments('');
-    setOpenSnackbar(true);
-    setProgress(0);
+    const apiUrl: string | undefined = (import.meta as any).env
+      .VITE_REACT_APP_API_URL;
+    console.log(apiUrl);
+
+    try {
+      const headers: HeadersInit = {
+        'Content-Type': 'application/json',
+        'API-KEY': (import.meta as any).env.VITE_REACT_APP_API_KEY || '',
+      };
+
+      const response = await fetch(`${apiUrl}/feedback`, {
+        method: 'POST',
+        headers,
+        body: JSON.stringify({ feedback: comments }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+
+      // Reset form on successful submission
+      setFirstName('');
+      setEmail('');
+      setComments('');
+      setOpenSnackbar(true);
+      setProgress(0);
+    } catch (error) {
+      console.error('Failed to submit feedback:', error);
+      alert('Failed to submit feedback. Please try again.');
+    }
   };
 
   const handleCloseSnackbar = () => {
@@ -49,21 +74,21 @@ export const Feedback: React.FC = () => {
   };
 
   useEffect(() => {
-    let timer: number | undefined;
+    let timer: NodeJS.Timeout | undefined;
     if (openSnackbar) {
       setProgress(0);
       timer = setInterval(() => {
         setProgress(prevProgress => {
           if (prevProgress < 100) {
-            return prevProgress + 100 / (autoHideDuration / 116.5); // Increment to reach 100 in 5000ms
+            return prevProgress + 100 / (autoHideDuration / 116.5);
           }
           clearInterval(timer);
-          return 100; // Ensure completion at 100%
+          return 100;
         });
-      }, 100); // Update every 100ms
+      }, 100);
     }
     return () => {
-      clearInterval(timer);
+      if (timer) clearInterval(timer);
     };
   }, [openSnackbar, autoHideDuration]);
 

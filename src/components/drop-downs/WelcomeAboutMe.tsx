@@ -27,10 +27,10 @@ export const WelcomeAboutMe: React.FC = () => {
   const [interval, setInterval] = React.useState(8500);
 
   const handleManualNav = () => {
-    setInterval(30000);
+    setInterval(40000);
     setTimeout(() => {
       setInterval(8500);
-    }, 60000);
+    }, 40000);
   };
 
   const handleNext = () => {
@@ -134,7 +134,7 @@ export const WelcomeAboutMe: React.FC = () => {
         <AutoPlaySwipeableViews
           index={activeStep}
           onChangeIndex={handleStepChange}
-          enableMouseEvents
+          enableMouseEvents={false}
           interval={interval}
         >
           {cardData.map((card, index) => (

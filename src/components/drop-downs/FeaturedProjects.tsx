@@ -27,10 +27,10 @@ export const FeaturedProjects: React.FC = () => {
   const [interval, setInterval] = React.useState(8500);
 
   const handleManualNav = () => {
-    setInterval(30000);
+    setInterval(40000);
     setTimeout(() => {
       setInterval(8500);
-    }, 30000);
+    }, 40000);
   };
 
   const handleNext = () => {
@@ -65,7 +65,7 @@ export const FeaturedProjects: React.FC = () => {
     {
       name: 'Emotion Classification',
       description:
-        'In this group project, I led a team of three in developing two custom deep-learning models for classifying emotions across facial images and textual data. Read our detailed report by visiting the link below.',
+        'In this group project, I led a team of three in developing two custom deep learning models for classifying emotions across facial images and textual data. Find our detailed report by visiting the link below!.',
       img: poster_img,
       githubLink:
         'https://github.com/marreddysainikhilreddy/emotion-classification',
@@ -92,7 +92,7 @@ export const FeaturedProjects: React.FC = () => {
         <AutoPlaySwipeableViews
           index={activeStep}
           onChangeIndex={handleStepChange}
-          enableMouseEvents
+          enableMouseEvents={false}
           interval={interval}
         >
           {projects.map((project, index) => (
