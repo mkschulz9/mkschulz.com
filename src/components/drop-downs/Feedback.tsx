@@ -145,7 +145,7 @@ export const Feedback: React.FC = () => {
               required
             />
             <TextField
-              label="Email"
+              label="Email Address"
               variant="outlined"
               value={email}
               onChange={handleEmailChange}
