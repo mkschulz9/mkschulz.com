@@ -39,12 +39,15 @@ export const Feedback: React.FC = () => {
     event.preventDefault();
     const apiUrl: string | undefined = (import.meta as any).env
       .VITE_REACT_APP_API_URL;
+    const apiKey: string | undefined = (import.meta as any).env
+      .VITE_REACT_APP_API_KEY;
     console.log('API URL:', apiUrl);
+    console.log('API URL:', apiKey);
 
     try {
       const headers: HeadersInit = {
         'Content-Type': 'application/json',
-        'API-KEY': (import.meta as any).env.VITE_REACT_APP_API_KEY || '',
+        'API-KEY': apiKey || 'Undefined Key',
       };
 
       const response = await fetch(`${apiUrl}/feedback`, {
@@ -64,7 +67,7 @@ export const Feedback: React.FC = () => {
       setOpenSnackbar(true);
       setProgress(0);
     } catch (error) {
-      console.error('Failed to submit feedback:', error);
+      console.error('Feedback Submission Error:', error);
       alert('Failed to submit feedback. Please try again.');
     }
   };
@@ -145,7 +148,7 @@ export const Feedback: React.FC = () => {
               required
             />
             <TextField
-              label="Email"
+              label="Email Address"
               variant="outlined"
               value={email}
               onChange={handleEmailChange}
