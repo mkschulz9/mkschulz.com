@@ -29,7 +29,7 @@ jobs:
         run: pnpm build
         env:
           VITE_REACT_APP_API_KEY: ${{ secrets.VITE_REACT_APP_API_KEY }}
-          VITE_REACT_APP_API_URL: ${{ vars.VITE_REACT_APP_API_URL }}
+          VITE_REACT_APP_API_URL: Mkschulzgithubio-backend-env.eba-bartikhs.us-east-1.elasticbeanstalk.com
 
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v4
