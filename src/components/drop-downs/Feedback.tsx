@@ -39,7 +39,7 @@ export const Feedback: React.FC = () => {
     event.preventDefault();
     const apiUrl: string | undefined = (import.meta as any).env
       .VITE_REACT_APP_API_URL;
-    console.log(apiUrl);
+    console.log('API URL:', apiUrl);
 
     try {
       const headers: HeadersInit = {
