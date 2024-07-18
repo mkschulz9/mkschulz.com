@@ -3,7 +3,7 @@ import { ExpandableList } from '../lib/ExpandableList';
 import { WelcomeAboutMe } from './WelcomeAboutMe';
 import { GoalsAspirations } from './GoalsAspirations';
 import { FeaturedProjects } from './FeaturedProjects';
-import { WorkExperience } from './WorkExperience';
+import { Experience } from './Experience/Experience';
 import { Feedback } from './Feedback';
 import BubbleChartIcon from '@mui/icons-material/BubbleChart';
 import CodeIcon from '@mui/icons-material/Code';
@@ -33,14 +33,14 @@ export const DropDowns: React.FC = ({}) => {
         icon={<CodeIcon />}
       ></ExpandableList>
       <ExpandableList
+        primary="EXPERIENCE"
+        children={<Experience />}
+        icon={<WorkHistoryIcon />}
+      ></ExpandableList>
+      <ExpandableList
         primary="GOALS & ASPIRATIONS"
         children={<GoalsAspirations />}
         icon={<FlagIcon />}
-      ></ExpandableList>
-      <ExpandableList
-        primary="WORK EXPERIENCE"
-        children={<WorkExperience />}
-        icon={<WorkHistoryIcon />}
       ></ExpandableList>
       <ExpandableList
         primary="FEEDBACK"
