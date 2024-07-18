@@ -24,13 +24,17 @@ const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 export const FeaturedProjects: React.FC = () => {
   const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
-  const [interval, setInterval] = React.useState(8500);
+  const [interval, setInterval] = React.useState(5000);
+  const timerRef = React.useRef<NodeJS.Timeout | null>(null);
 
   const handleManualNav = () => {
-    setInterval(40000);
-    setTimeout(() => {
-      setInterval(8500);
-    }, 40000);
+    if (timerRef.current) {
+      clearTimeout(timerRef.current);
+    }
+    setInterval(20000);
+    timerRef.current = setTimeout(() => {
+      setInterval(5000);
+    }, 20000);
   };
 
   const handleNext = () => {
@@ -65,7 +69,7 @@ export const FeaturedProjects: React.FC = () => {
     {
       name: 'Emotion Classification',
       description:
-        'In this group project, I led a team of three in developing two custom deep learning models for classifying emotions across facial images and textual data. Find our detailed report by visiting the link below!.',
+        'In this group project, I led a team of three in developing two custom deep learning models for classifying emotions across facial images and textual data. Find our detailed report by visiting the link below!',
       img: poster_img,
       githubLink:
         'https://github.com/marreddysainikhilreddy/emotion-classification',

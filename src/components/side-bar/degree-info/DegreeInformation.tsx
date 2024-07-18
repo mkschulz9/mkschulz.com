@@ -19,7 +19,7 @@ export interface DegreeInformationProps {
   endDate: Date;
   courses: string[];
   gpa?: string;
-  defaultOpen?: Boolean;
+  defaultOpen?: boolean;
 }
 
 export const DegreeInformation: React.FC<DegreeInformationProps> = props => {

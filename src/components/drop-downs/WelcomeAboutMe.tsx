@@ -25,10 +25,14 @@ export const WelcomeAboutMe: React.FC = () => {
   const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
   const [interval, setInterval] = React.useState(8500);
+  const timerRef = React.useRef<NodeJS.Timeout | null>(null);
 
   const handleManualNav = () => {
+    if (timerRef.current) {
+      clearTimeout(timerRef.current);
+    }
     setInterval(40000);
-    setTimeout(() => {
+    timerRef.current = setTimeout(() => {
       setInterval(8500);
     }, 40000);
   };

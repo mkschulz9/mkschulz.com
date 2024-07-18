@@ -92,14 +92,14 @@ export const GoalsAspirations: React.FC = () => {
         }}
       >
         <Typography variant="body1">
-          Explore an interactive roadmap of my goals and aspirations! This
-          visual guide represents key milestones I aim to achieve in the coming
-          years. Each waypoint corresponds to a specific goal or vision, marked
-          by its expected time frame.
+          Explore my goals and aspirations! This roadmap represents key
+          milestones I aim to achieve in the coming years. Each waypoint
+          corresponds to a specific goal or vision, marked by its expected time
+          frame.
         </Typography>
         <Typography variant="body1" sx={{ mt: 2 }}>
-          Click on the points on the roadmap to uncover more about the
-          progressive goals I have set for myself.
+          Click on the points below to learn about the progressive goals I have
+          set for myself.
         </Typography>
       </Paper>
       <Stack

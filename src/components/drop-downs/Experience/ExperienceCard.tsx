@@ -7,16 +7,24 @@ import {
   TimelineOppositeContent,
   TimelineSeparator,
 } from '@mui/lab';
-import { Typography } from '@mui/material';
-import React from 'react';
+import { Typography, Collapse } from '@mui/material';
+import React, { useState } from 'react';
 
 interface ExperienceCardProps {
   year: number;
   title: string;
   institution: string;
+  description: string;
+  defaultOpen?: boolean;
 }
 
 export const ExperienceCard: React.FC<ExperienceCardProps> = props => {
+  const [expanded, setExpanded] = useState(props.defaultOpen ?? false);
+
+  const toggleDropdown = () => {
+    setExpanded(!expanded);
+  };
+
   return (
     <TimelineItem>
       <TimelineOppositeContent
@@ -34,9 +42,14 @@ export const ExperienceCard: React.FC<ExperienceCardProps> = props => {
         </TimelineDot>
         <TimelineConnector />
       </TimelineSeparator>
-      <TimelineContent>
+      <TimelineContent sx={{ cursor: 'pointer' }} onClick={toggleDropdown}>
         <Typography variant="h5">{props.title}</Typography>
         <Typography color="text.secondary">{props.institution}</Typography>
+        <Collapse in={expanded}>
+          <Typography variant="body2" sx={{ mt: 1 }}>
+            {props.description}
+          </Typography>
+        </Collapse>
       </TimelineContent>
     </TimelineItem>
   );
