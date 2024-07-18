@@ -11,6 +11,7 @@ import {
   Typography,
 } from '@mui/material';
 import background from '../../assets/background.jpg';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 export const Feedback: React.FC = () => {
   const [firstName, setFirstName] = useState('');
@@ -18,6 +19,7 @@ export const Feedback: React.FC = () => {
   const [comments, setComments] = useState('');
   const [openSnackbar, setOpenSnackbar] = useState(false);
   const [progress, setProgress] = useState(0);
+  const [captchaValue, setCaptchaValue] = useState('');
 
   const autoHideDuration = 3000;
 
@@ -35,9 +37,18 @@ export const Feedback: React.FC = () => {
     setComments(event.target.value);
   };
 
-  const handleSubmit = async (event: { preventDefault: () => void }) => {
+  const onCaptchaChange = (value: string) => {
+    setCaptchaValue(value);
+  };
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const apiUrl: string | undefined = (import.meta as any).env
+    if (!captchaValue) {
+      alert('Please complete the reCAPTCHA');
+      return;
+    }
+
+    /*const apiUrl: string | undefined = (import.meta as any).env
       .VITE_REACT_APP_API_URL;
     const apiKey: string | undefined = (import.meta as any).env
       .VITE_REACT_APP_API_KEY;
@@ -58,9 +69,8 @@ export const Feedback: React.FC = () => {
 
       if (!response.ok) {
         throw new Error('Network response was not ok');
-      }
-
-      // Reset form on successful submission
+      }*/
+    try {
       setFirstName('');
       setEmail('');
       setComments('');
@@ -118,16 +128,14 @@ export const Feedback: React.FC = () => {
           textAlign: 'center',
         }}
       >
-        <Box sx={{ textAlign: 'center' }}>
-          <Typography variant="h4" component="h1" gutterBottom>
-            Feedback is Valuable
-          </Typography>
-          <Typography variant="body1">
-            Feel free to leave any comments regarding bugs, potential new
-            features, or anything else you think could be improved. Your input
-            is greatly appreciated!
-          </Typography>
-        </Box>
+        <Typography variant="h4" component="h1" gutterBottom>
+          Feedback is Valuable
+        </Typography>
+        <Typography variant="body1">
+          Feel free to leave any comments regarding bugs, potential new
+          features, or anything else you think could be improved. Your input is
+          greatly appreciated!
+        </Typography>
       </Paper>
       <Stack
         spacing={2}
@@ -146,11 +154,10 @@ export const Feedback: React.FC = () => {
             alignItems="center"
           >
             <TextField
-              label="First Name"
+              label="Name"
               variant="outlined"
               value={firstName}
               onChange={handleFirstNameChange}
-              required
               sx={{ width: '90%' }}
             />
             <TextField
@@ -159,7 +166,6 @@ export const Feedback: React.FC = () => {
               value={email}
               onChange={handleEmailChange}
               type="email"
-              required
               sx={{ width: '90%' }}
             />
             <TextField
@@ -172,11 +178,16 @@ export const Feedback: React.FC = () => {
               required
               sx={{ width: '90%' }}
             />
+            <ReCAPTCHA
+              sitekey="6Le_VxMqAAAAAJgM3z8k5X3TovRt0qnS2guYZrs6"
+              onChange={onCaptchaChange}
+            />
             <Button
               type="submit"
               variant="contained"
               color="primary"
               sx={{ width: '50%' }}
+              disabled={!captchaValue}
             >
               Submit Feedback
             </Button>
