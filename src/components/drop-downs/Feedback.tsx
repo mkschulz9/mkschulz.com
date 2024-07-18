@@ -19,7 +19,7 @@ export const Feedback: React.FC = () => {
   const [openSnackbar, setOpenSnackbar] = useState(false);
   const [progress, setProgress] = useState(0);
 
-  const autoHideDuration = 3000; // Snackbar visibility duration in milliseconds
+  const autoHideDuration = 3000;
 
   const handleFirstNameChange = (
     event: React.ChangeEvent<HTMLInputElement>
@@ -139,13 +139,19 @@ export const Feedback: React.FC = () => {
         }}
       >
         <form onSubmit={handleSubmit}>
-          <Stack spacing={2}>
+          <Stack
+            spacing={2}
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+          >
             <TextField
               label="First Name"
               variant="outlined"
               value={firstName}
               onChange={handleFirstNameChange}
               required
+              sx={{ width: '90%' }}
             />
             <TextField
               label="Email"
@@ -154,6 +160,7 @@ export const Feedback: React.FC = () => {
               onChange={handleEmailChange}
               type="email"
               required
+              sx={{ width: '90%' }}
             />
             <TextField
               label="Comments"
@@ -163,8 +170,14 @@ export const Feedback: React.FC = () => {
               multiline
               rows={4}
               required
+              sx={{ width: '90%' }}
             />
-            <Button type="submit" variant="contained" color="primary">
+            <Button
+              type="submit"
+              variant="contained"
+              color="primary"
+              sx={{ width: '50%' }}
+            >
               Submit Feedback
             </Button>
           </Stack>
