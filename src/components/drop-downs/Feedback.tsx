@@ -14,8 +14,8 @@ import background from '../../assets/background.jpg';
 import ReCAPTCHA from 'react-google-recaptcha';
 
 export const Feedback: React.FC = () => {
-  const [firstName, setFirstName] = useState('');
-  const [email, setEmail] = useState('');
+  const [firstName, setFirstName] = useState('None');
+  const [email, setEmail] = useState('None');
   const [comments, setComments] = useState('');
   const [openSnackbar, setOpenSnackbar] = useState(false);
   const [progress, setProgress] = useState(0);
@@ -48,17 +48,13 @@ export const Feedback: React.FC = () => {
       return;
     }
 
-    /*const apiUrl: string | undefined = (import.meta as any).env
+    const apiUrl: string | undefined = (import.meta as any).env
       .VITE_REACT_APP_API_URL;
-    const apiKey: string | undefined = (import.meta as any).env
-      .VITE_REACT_APP_API_KEY;
     console.log('API URL:', apiUrl);
-    console.log('API URL:', apiKey);
 
     try {
       const headers: HeadersInit = {
         'Content-Type': 'application/json',
-        'API-KEY': apiKey || 'Undefined Key',
       };
 
       const response = await fetch(`${apiUrl}/feedback`, {
@@ -69,8 +65,8 @@ export const Feedback: React.FC = () => {
 
       if (!response.ok) {
         throw new Error('Network response was not ok');
-      }*/
-    try {
+      }
+
       setFirstName('');
       setEmail('');
       setComments('');

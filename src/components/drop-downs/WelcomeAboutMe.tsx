@@ -135,48 +135,11 @@ export const WelcomeAboutMe: React.FC = () => {
         </Box>
       </Paper>
       <Box sx={{ width: '100%', maxWidth: 426 }}>
-        <AutoPlaySwipeableViews
-          index={activeStep}
-          onChangeIndex={handleStepChange}
-          enableMouseEvents={false}
-          interval={interval}
-        >
-          {cardData.map((card, index) => (
-            <Card
-              key={index}
-              sx={{
-                maxWidth: 426,
-                borderBottomLeftRadius: '0px',
-                borderBottomRightRadius: '0px',
-                borderTopLeftRadius: '10px',
-                borderTopRightRadius: '10px',
-              }}
-            >
-              <CardMedia sx={{ height: 290 }} image={card.image} />
-              <CardContent sx={{ bgcolor: 'secondary.main' }}>
-                <Typography gutterBottom variant="h5">
-                  {card.title}
-                </Typography>
-                {card.content.map((paragraph, idx) => (
-                  <Typography
-                    key={idx}
-                    variant="body2"
-                    color="text.secondary"
-                    sx={{ mb: 1 }}
-                  >
-                    {paragraph}
-                  </Typography>
-                ))}
-              </CardContent>
-            </Card>
-          ))}
-        </AutoPlaySwipeableViews>
         <MobileStepper
           sx={{
-            borderBottomLeftRadius: '10px',
-            borderBottomRightRadius: '10px',
+            borderTopLeftRadius: '10px',
+            borderTopRightRadius: '10px',
             bgcolor: 'secondary.main',
-            mt: -2,
           }}
           steps={4}
           position="static"
@@ -210,6 +173,42 @@ export const WelcomeAboutMe: React.FC = () => {
             </Button>
           }
         />
+        <AutoPlaySwipeableViews
+          index={activeStep}
+          onChangeIndex={handleStepChange}
+          enableMouseEvents={false}
+          interval={interval}
+        >
+          {cardData.map((card, index) => (
+            <Card
+              key={index}
+              sx={{
+                maxWidth: 426,
+                borderBottomLeftRadius: '10px',
+                borderBottomRightRadius: '10px',
+                borderTopLeftRadius: '0px',
+                borderTopRightRadius: '0px',
+              }}
+            >
+              <CardMedia sx={{ height: 290 }} image={card.image} />
+              <CardContent sx={{ bgcolor: 'secondary.main' }}>
+                <Typography gutterBottom variant="h5">
+                  {card.title}
+                </Typography>
+                {card.content.map((paragraph, idx) => (
+                  <Typography
+                    key={idx}
+                    variant="body2"
+                    color="text.secondary"
+                    sx={{ mb: 1 }}
+                  >
+                    {paragraph}
+                  </Typography>
+                ))}
+              </CardContent>
+            </Card>
+          ))}
+        </AutoPlaySwipeableViews>
       </Box>
     </Box>
   );

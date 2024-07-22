@@ -5,6 +5,7 @@ import {
   CardContent,
   CardMedia,
   IconButton,
+  Stack,
   Typography,
   useTheme,
 } from '@mui/material';
@@ -18,6 +19,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import bits_background from '../../assets/bits_background.jpg';
 import personal_website_github from '../../assets/personal_website_github.png';
 import poster_img from '../../assets/mindmap_poster.jpg';
+import coming_soon_img from '../../assets/coming_soon.jpg';
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
@@ -52,13 +54,6 @@ export const FeaturedProjects: React.FC = () => {
   };
 
   const projects = [
-    /*{
-      name: 'Personal Chatbot',
-      description:
-        'I fine-tuned an LLM, training it on information about my education, work experience, aspirations, and more! Visit this link to try it out and learn more about me.',
-      img: 'https://via.placeholder.com/400x250?text=Project+1',
-      githubLink: 'blank',
-    },*/
     {
       name: 'mkschulz9.github.io',
       description:
@@ -74,12 +69,18 @@ export const FeaturedProjects: React.FC = () => {
       githubLink:
         'https://github.com/marreddysainikhilreddy/emotion-classification',
     },
+    {
+      name: 'Personal Chatbot (In-progress)',
+      description:
+        'I fine-tuned an LLM, training it on information about my education, work experience, aspirations, and more! I am currently working on getting the fine-tuned model deployed and an interface setup. Check back soon!',
+      img: coming_soon_img,
+    },
   ];
 
   const maxSteps = projects.length;
 
   return (
-    <Box
+    <Stack
       sx={{
         display: 'flex',
         flexDirection: 'column',
@@ -92,49 +93,11 @@ export const FeaturedProjects: React.FC = () => {
         p: 3,
       }}
     >
-      <Box sx={{ width: '100%', maxWidth: 426 }}>
-        <AutoPlaySwipeableViews
-          index={activeStep}
-          onChangeIndex={handleStepChange}
-          enableMouseEvents={false}
-          interval={interval}
-        >
-          {projects.map((project, index) => (
-            <Card
-              key={index}
-              sx={{
-                borderBottomLeftRadius: '0px',
-                borderBottomRightRadius: '0px',
-                borderTopLeftRadius: '10px',
-                borderTopRightRadius: '10px',
-              }}
-            >
-              <CardMedia sx={{ height: 290 }} image={project.img} />
-              <CardContent sx={{ bgcolor: 'secondary.main' }}>
-                <Typography gutterBottom variant="h5">
-                  {project.name}
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  {project.description}
-                </Typography>
-                {project.githubLink && (
-                  <IconButton
-                    size="small"
-                    href={project.githubLink}
-                    target="_blank"
-                    sx={{ mt: 1, mb: -2 }}
-                  >
-                    <GitHubIcon />
-                  </IconButton>
-                )}
-              </CardContent>
-            </Card>
-          ))}
-        </AutoPlaySwipeableViews>
+      <Stack sx={{ width: '100%', maxWidth: 426 }}>
         <MobileStepper
           sx={{
-            borderBottomLeftRadius: '10px',
-            borderBottomRightRadius: '10px',
+            borderTopLeftRadius: '10px',
+            borderTopRightRadius: '10px',
             bgcolor: 'secondary.main',
           }}
           steps={maxSteps}
@@ -169,7 +132,45 @@ export const FeaturedProjects: React.FC = () => {
             </Button>
           }
         />
-      </Box>
-    </Box>
+        <AutoPlaySwipeableViews
+          index={activeStep}
+          onChangeIndex={handleStepChange}
+          enableMouseEvents={false}
+          interval={interval}
+        >
+          {projects.map((project, index) => (
+            <Card
+              key={index}
+              sx={{
+                borderBottomLeftRadius: '10px',
+                borderBottomRightRadius: '10px',
+                borderTopLeftRadius: '0px',
+                borderTopRightRadius: '0px',
+              }}
+            >
+              <CardMedia sx={{ height: 290 }} image={project.img} />
+              <CardContent sx={{ bgcolor: 'secondary.main' }}>
+                <Typography gutterBottom variant="h5">
+                  {project.name}
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  {project.description}
+                </Typography>
+                {project.githubLink && (
+                  <IconButton
+                    size="small"
+                    href={project.githubLink}
+                    target="_blank"
+                    sx={{ mt: 1, mb: -2 }}
+                  >
+                    <GitHubIcon />
+                  </IconButton>
+                )}
+              </CardContent>
+            </Card>
+          ))}
+        </AutoPlaySwipeableViews>
+      </Stack>
+    </Stack>
   );
 };
