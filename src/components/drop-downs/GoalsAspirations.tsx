@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import { Stack, Popover, Typography, Paper, IconButton } from '@mui/material';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import city_roadmap from '../../assets/city_roadmap.jpeg';
-import background from '../../assets/background.jpg';
+import background from '../../assets/secondary_background.png';
 import ClearIcon from '@mui/icons-material/Clear';
 
 const goalsData = [
@@ -80,120 +80,120 @@ export const GoalsAspirations: React.FC = () => {
       <Paper
         elevation={3}
         sx={{
-          p: 2.5,
-          mb: 1.5,
-          mt: -1,
+          p: 3,
+          mb: 2,
+          mt: -2,
           backgroundImage: `url(${background})`,
           backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',
-          backgroundPosition: 'center',
           color: 'white',
-          textAlign: 'center',
         }}
       >
-        <Typography variant="body1">
-          Explore my goals and aspirations! This roadmap represents key
-          milestones I aim to achieve in the coming years. Each waypoint
-          corresponds to a specific goal or vision, marked by its expected time
-          frame.
+        <Typography variant="h5" gutterBottom>
+          Discover My Goals and Aspirations
         </Typography>
-        <Typography variant="body1" sx={{ mt: 2 }}>
-          Click on the points below to learn about the progressive goals I have
-          set for myself.
+        <Typography variant="body1">
+          Explore the waypoints on the map below to discover the progressive
+          goals I have set for myself! Click on each one to learn more.
         </Typography>
       </Paper>
-      <Stack
+      <Paper
         ref={anchorRef}
+        elevation={3}
         sx={{
-          borderRadius: '5px',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          backgroundImage: `url(${city_roadmap})`,
-          backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',
-          backgroundPosition: 'center',
+          borderRadius: '10px',
         }}
       >
-        {goalsData.map(goal => (
-          <IconButton
-            color="primary"
-            key={goal.id}
-            sx={{
-              left: goal.left,
-            }}
-            onClick={e => handleClick(e, goal)}
-          >
-            {
-              <Typography
-                variant="caption"
-                color="inherit"
-                sx={{
-                  fontWeight: 'bold',
-                  fontSize: '1.1rem',
-                  backgroundColor: 'rgba(255, 255, 255, 0.5)',
-                  borderRadius: '4px',
-                  mr: -0.3,
-                }}
-              >
-                {goal.id}
-              </Typography>
-            }
-            {
-              <LocationOnIcon
-                sx={{
-                  backgroundColor: 'rgba(255, 255, 255, 0.5)',
-                  borderRadius: '40px',
-                }}
-              />
-            }
-          </IconButton>
-        ))}
-        <Popover
-          open={Boolean(anchorEl)}
-          anchorEl={anchorRef.current}
-          onClose={handleClose}
-          anchorOrigin={{
-            vertical: 'center',
-            horizontal: 'center',
+        <Stack
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            backgroundImage: `url(${city_roadmap})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            borderRadius: '10px',
+            p: 3,
           }}
-          transformOrigin={{
-            vertical: 'center',
-            horizontal: 'center',
-          }}
-          sx={{ maxWidth: '88%' }}
         >
-          <Stack sx={{ p: 0.5, pl: 1, pr: 1 }}>
-            <Stack
+          {goalsData.map(goal => (
+            <IconButton
+              color="primary"
+              key={goal.id}
               sx={{
-                display: 'flex',
-                flexDirection: 'row',
-                alignItems: 'center',
-                justifyContent: 'space-between',
+                left: goal.left,
               }}
+              onClick={e => handleClick(e, goal)}
             >
-              <Typography color="primary" variant="h6">
-                {selectedGoal?.title}
-              </Typography>
-              <IconButton onClick={handleClose} size="small" color="primary">
-                <ClearIcon />
-              </IconButton>
-            </Stack>
-            <Typography variant="body2" color="text.secondary">
-              {selectedGoal?.description}
-            </Typography>
-            <Stack sx={{ alignItems: 'center', pt: 0.5 }}>
-              <Typography
-                color="primary"
-                variant="subtitle1"
-                sx={{ fontSize: '0.75rem' }}
+              {
+                <Typography
+                  variant="caption"
+                  color="inherit"
+                  sx={{
+                    fontWeight: 'bold',
+                    fontSize: '1.1rem',
+                    backgroundColor: 'rgba(255, 255, 255, 0.5)',
+                    borderRadius: '4px',
+                    mr: -0.3,
+                  }}
+                >
+                  {goal.id}
+                </Typography>
+              }
+              {
+                <LocationOnIcon
+                  sx={{
+                    backgroundColor: 'rgba(255, 255, 255, 0.5)',
+                    borderRadius: '10px',
+                  }}
+                />
+              }
+            </IconButton>
+          ))}
+          <Popover
+            open={Boolean(anchorEl)}
+            anchorEl={anchorRef.current}
+            onClose={handleClose}
+            anchorOrigin={{
+              vertical: 'center',
+              horizontal: 'center',
+            }}
+            transformOrigin={{
+              vertical: 'center',
+              horizontal: 'center',
+            }}
+            sx={{ maxWidth: '88%' }}
+          >
+            <Stack sx={{ p: 0.5, pl: 1, pr: 1 }}>
+              <Stack
+                sx={{
+                  display: 'flex',
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                }}
               >
-                {selectedGoal?.id}
+                <Typography color="primary" variant="h6">
+                  {selectedGoal?.title}
+                </Typography>
+                <IconButton onClick={handleClose} size="small" color="primary">
+                  <ClearIcon />
+                </IconButton>
+              </Stack>
+              <Typography variant="body2" color="text.secondary">
+                {selectedGoal?.description}
               </Typography>
+              <Stack sx={{ alignItems: 'center', pt: 0.5 }}>
+                <Typography
+                  color="primary"
+                  variant="subtitle1"
+                  sx={{ fontSize: '0.75rem' }}
+                >
+                  {selectedGoal?.id}
+                </Typography>
+              </Stack>
             </Stack>
-          </Stack>
-        </Popover>
-      </Stack>
+          </Popover>
+        </Stack>
+      </Paper>
     </Stack>
   );
 };

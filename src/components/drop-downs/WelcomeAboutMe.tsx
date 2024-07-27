@@ -1,11 +1,10 @@
 import {
-  Box,
   Button,
-  Card,
   CardContent,
   CardMedia,
   MobileStepper,
   Paper,
+  Stack,
   Typography,
   useTheme,
 } from '@mui/material';
@@ -13,7 +12,7 @@ import salvador_collage_img from '../../assets/Salvador.png';
 import lemonade_img from '../../assets/lemonade.webp';
 import cs_img from '../../assets/computer_science_ai.webp';
 import first_generation_img from '../../assets/first_generation.webp';
-import background from '../../assets/background.jpg';
+import background from '../../assets/main_background.png';
 import React from 'react';
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
@@ -86,15 +85,10 @@ export const WelcomeAboutMe: React.FC = () => {
     },
   ];
 
+  const maxSteps = cardData.length;
+
   return (
-    <Box
-      sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        p: 1,
-      }}
-    >
+    <Stack alignItems={'center'}>
       <Paper
         elevation={3}
         sx={{
@@ -103,113 +97,122 @@ export const WelcomeAboutMe: React.FC = () => {
           mt: -2,
           backgroundImage: `url(${background})`,
           backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',
-          backgroundPosition: 'center',
           color: 'white',
-          textAlign: 'center',
         }}
       >
-        <Box sx={{ textAlign: 'center' }}>
-          <Typography variant="h4" component="h1" gutterBottom>
-            W&bull;E&bull;L&bull;C&bull;O&bull;M&bull;E
-          </Typography>
-          <Typography variant="body1" sx={{ mt: 2 }}>
-            Welcome to my personal website, built from scratch! This site
-            showcases everything about me. Here, you will find a featured
-            display of my projects detailing the challenges I have tackled and
-            the solutions I have engineered in machine learning and computer
-            science. Additionally, I have included sections about my educational
-            background and work experience to give you a well-rounded view of my
-            expertise and professional growth.
-          </Typography>
-          <Typography variant="body1" sx={{ mt: 1 }}>
-            But that's not all—this website is also a window into the lighter
-            side of my life. Dive into fun facts about me, explore my varied
-            hobbies, and discover my goals and aspirations.
-          </Typography>
-          <Typography variant="body1" sx={{ mt: 1 }}>
-            Thank you for visiting. Whether you're a potential collaborator,
-            recruiter, or simply here out of curiosity, I hope you enjoy
-            exploring and leave inspired by what you find!
-          </Typography>
-        </Box>
-      </Paper>
-      <Box sx={{ width: '100%', maxWidth: 426 }}>
-        <MobileStepper
+        <Typography
+          variant="h4"
+          gutterBottom
           sx={{
-            borderTopLeftRadius: '10px',
-            borderTopRightRadius: '10px',
-            bgcolor: 'secondary.main',
+            display: 'flex',
+            justifyContent: 'center',
           }}
-          steps={4}
-          position="static"
-          activeStep={activeStep}
-          nextButton={
-            <Button
-              size="small"
-              onClick={handleNext}
-              disabled={activeStep === 4 - 1}
-            >
-              Next
-              {theme.direction === 'rtl' ? (
-                <KeyboardArrowLeft />
-              ) : (
-                <KeyboardArrowRight />
-              )}
-            </Button>
-          }
-          backButton={
-            <Button
-              size="small"
-              onClick={handleBack}
-              disabled={activeStep === 0}
-            >
-              {theme.direction === 'rtl' ? (
-                <KeyboardArrowRight />
-              ) : (
-                <KeyboardArrowLeft />
-              )}
-              Back
-            </Button>
-          }
-        />
-        <AutoPlaySwipeableViews
-          index={activeStep}
-          onChangeIndex={handleStepChange}
-          enableMouseEvents={false}
-          interval={interval}
         >
-          {cardData.map((card, index) => (
-            <Card
-              key={index}
-              sx={{
-                maxWidth: 426,
-                borderBottomLeftRadius: '10px',
-                borderBottomRightRadius: '10px',
-                borderTopLeftRadius: '0px',
-                borderTopRightRadius: '0px',
-              }}
-            >
-              <CardMedia sx={{ height: 290 }} image={card.image} />
-              <CardContent sx={{ bgcolor: 'secondary.main' }}>
-                <Typography gutterBottom variant="h5">
-                  {card.title}
-                </Typography>
-                {card.content.map((paragraph, idx) => (
-                  <Typography
-                    key={idx}
-                    variant="body2"
-                    color="text.secondary"
-                    sx={{ mb: 1 }}
-                  >
-                    {paragraph}
+          W&bull;E&bull;L&bull;C&bull;O&bull;M&bull;E
+        </Typography>
+        <Typography variant="body1" gutterBottom>
+          Welcome to my personal website, built from scratch! This site
+          showcases everything about me. Here, you will find a featured display
+          of my projects detailing the challenges I have tackled and the
+          solutions I have engineered in machine learning and computer science.
+          Additionally, I have included sections about my educational background
+          and work experience to give you a well-rounded view of my expertise
+          and professional growth.
+        </Typography>
+        <Typography variant="body1" gutterBottom>
+          But that's not all—this website is also a window into the lighter side
+          of my life. Dive into fun facts about me, explore my varied hobbies,
+          and discover my goals and aspirations.
+        </Typography>
+        <Typography variant="body1">
+          Thank you for visiting. Whether you're a potential collaborator,
+          recruiter, or simply here out of curiosity, I hope you enjoy exploring
+          and leave inspired by what you find!
+        </Typography>
+      </Paper>
+      <Stack maxWidth={'95%'} maxHeight={'80%'}>
+        <Paper
+          elevation={3}
+          sx={{
+            maxWidth: 440,
+            bgcolor: 'secondary.main',
+            borderRadius: '10px',
+          }}
+        >
+          <AutoPlaySwipeableViews
+            index={activeStep}
+            onChangeIndex={handleStepChange}
+            interval={interval}
+          >
+            {cardData.map((card, index) => (
+              <Stack key={index} maxWidth={440}>
+                <CardMedia
+                  sx={{
+                    height: 240,
+                    borderTopLeftRadius: '10px',
+                    borderTopRightRadius: '10px',
+                  }}
+                  image={card.image}
+                />
+                <CardContent sx={{ bgcolor: 'secondary.main' }}>
+                  <Typography gutterBottom variant="h5">
+                    {card.title}
                   </Typography>
-                ))}
-              </CardContent>
-            </Card>
-          ))}
-        </AutoPlaySwipeableViews>
-      </Box>
-    </Box>
+                  {card.content.map((paragraph, idx) => (
+                    <Typography
+                      key={idx}
+                      variant="body2"
+                      color="text.secondary"
+                      mb={idx === card.content.length - 1 ? 0 : 2}
+                    >
+                      {paragraph}
+                    </Typography>
+                  ))}
+                </CardContent>
+              </Stack>
+            ))}
+          </AutoPlaySwipeableViews>
+          <MobileStepper
+            sx={{
+              borderBottomLeftRadius: '10px',
+              borderBottomRightRadius: '10px',
+              bgcolor: 'secondary.main',
+              maxWidth: 440,
+            }}
+            steps={maxSteps}
+            position="static"
+            activeStep={activeStep}
+            nextButton={
+              <Button
+                size="small"
+                onClick={handleNext}
+                disabled={activeStep === maxSteps - 1}
+              >
+                Next
+                {theme.direction === 'rtl' ? (
+                  <KeyboardArrowLeft />
+                ) : (
+                  <KeyboardArrowRight />
+                )}
+              </Button>
+            }
+            backButton={
+              <Button
+                size="small"
+                onClick={handleBack}
+                disabled={activeStep === 0}
+              >
+                {theme.direction === 'rtl' ? (
+                  <KeyboardArrowRight />
+                ) : (
+                  <KeyboardArrowLeft />
+                )}
+                Back
+              </Button>
+            }
+          />
+        </Paper>
+      </Stack>
+    </Stack>
   );
 };

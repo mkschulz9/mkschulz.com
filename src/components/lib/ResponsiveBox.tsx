@@ -10,7 +10,7 @@ export const ResponsiveBox: React.FC<ResponsiveBoxProps> = props => {
     <Stack
       sx={{
         display: 'flex',
-        flexDirection: { xs: 'column', md: 'row' },
+        flexDirection: { sm: 'column', md: 'row' },
         width: '100%',
         gap: 0.5,
       }}

@@ -6,6 +6,15 @@ import { ThemeProvider, createTheme, CssBaseline } from '@mui/material';
 
 export const App: React.FC = ({}) => {
   const theme = createTheme({
+    breakpoints: {
+      values: {
+        xs: 0,
+        sm: 521,
+        md: 769,
+        lg: 867,
+        xl: 1000,
+      },
+    },
     palette: {
       primary: {
         main: '#1434A4',

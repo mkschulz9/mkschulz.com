@@ -63,7 +63,7 @@ export const SideBar: React.FC = ({}) => {
   };
 
   return (
-    <Stack sx={{ maxWidth: { md: '52vh' } }}>
+    <Stack sx={{ maxWidth: { md: '34%', xl: '28%' } }}>
       <Paper elevation={6} sx={{ p: 1 }}>
         <PortraitName name="Matthew K. Schulz" />
         <Divider />

@@ -6,16 +6,15 @@ import {
   Snackbar,
   SnackbarContent,
   LinearProgress,
-  Box,
   Paper,
   Typography,
 } from '@mui/material';
-import background from '../../assets/background.jpg';
+import background from '../../assets/background_feedback.png';
 import ReCAPTCHA from 'react-google-recaptcha';
 
 export const Feedback: React.FC = () => {
-  const [firstName, setFirstName] = useState('None');
-  const [email, setEmail] = useState('None');
+  const [firstName, setFirstName] = useState('');
+  const [email, setEmail] = useState('');
   const [comments, setComments] = useState('');
   const [openSnackbar, setOpenSnackbar] = useState(false);
   const [progress, setProgress] = useState(0);
@@ -102,14 +101,7 @@ export const Feedback: React.FC = () => {
   }, [openSnackbar, autoHideDuration]);
 
   return (
-    <Box
-      sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        p: 1,
-      }}
-    >
+    <Stack>
       <Paper
         elevation={3}
         sx={{
@@ -118,13 +110,10 @@ export const Feedback: React.FC = () => {
           mt: -2,
           backgroundImage: `url(${background})`,
           backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',
-          backgroundPosition: 'center',
           color: 'white',
-          textAlign: 'center',
         }}
       >
-        <Typography variant="h4" component="h1" gutterBottom>
+        <Typography variant="h5" gutterBottom>
           Feedback is Valuable
         </Typography>
         <Typography variant="body1">
@@ -133,81 +122,88 @@ export const Feedback: React.FC = () => {
           greatly appreciated!
         </Typography>
       </Paper>
-      <Stack
-        spacing={2}
-        sx={{
-          bgcolor: 'secondary.main',
-          p: 2.5,
-          borderRadius: '5px',
-          width: '90%',
-        }}
-      >
-        <form onSubmit={handleSubmit}>
-          <Stack
-            spacing={2}
-            display="flex"
-            justifyContent="center"
-            alignItems="center"
-          >
-            <TextField
-              label="Name"
-              variant="outlined"
-              value={firstName}
-              onChange={handleFirstNameChange}
-              sx={{ width: '90%' }}
-            />
-            <TextField
-              label="Email"
-              variant="outlined"
-              value={email}
-              onChange={handleEmailChange}
-              type="email"
-              sx={{ width: '90%' }}
-            />
-            <TextField
-              label="Comments"
-              variant="outlined"
-              value={comments}
-              onChange={handleCommentsChange}
-              multiline
-              rows={4}
-              required
-              sx={{ width: '90%' }}
-            />
-            <ReCAPTCHA
-              sitekey="6Le_VxMqAAAAAJgM3z8k5X3TovRt0qnS2guYZrs6"
-              onChange={onCaptchaChange}
-            />
-            <Button
-              type="submit"
-              variant="contained"
-              color="primary"
-              sx={{ width: '50%' }}
-              disabled={!captchaValue}
-            >
-              Submit Feedback
-            </Button>
-          </Stack>
-        </form>
-        <Snackbar
-          open={openSnackbar}
-          autoHideDuration={autoHideDuration}
-          onClose={handleCloseSnackbar}
-          anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+      <Stack alignItems="center">
+        <Paper
+          elevation={3}
+          sx={{
+            bgcolor: 'secondary.main',
+            p: 2.5,
+            borderRadius: '10px',
+            width: '80%',
+          }}
         >
-          <SnackbarContent
-            message="Feedback submitted, thank you!"
-            sx={{ backgroundColor: 'primary.main', position: 'relative' }}
-            action={
-              <LinearProgress
-                variant="determinate"
-                value={progress}
-                sx={{ position: 'absolute', bottom: 0, left: 0, width: '100%' }}
+          <form onSubmit={handleSubmit}>
+            <Stack
+              spacing={2}
+              display="flex"
+              justifyContent="center"
+              alignItems="center"
+            >
+              <TextField
+                label="Name"
+                variant="outlined"
+                value={firstName}
+                onChange={handleFirstNameChange}
+                sx={{ width: '90%' }}
               />
-            }
-          />
-        </Snackbar>
+              <TextField
+                label="Email"
+                variant="outlined"
+                value={email}
+                onChange={handleEmailChange}
+                type="email"
+                sx={{ width: '90%' }}
+              />
+              <TextField
+                label="Comments"
+                variant="outlined"
+                value={comments}
+                onChange={handleCommentsChange}
+                multiline
+                rows={4}
+                required
+                sx={{ width: '90%' }}
+              />
+              <ReCAPTCHA
+                sitekey="6Le_VxMqAAAAAJgM3z8k5X3TovRt0qnS2guYZrs6"
+                onChange={onCaptchaChange}
+              />
+              <Button
+                type="submit"
+                variant="contained"
+                color="primary"
+                sx={{ width: '50%' }}
+                disabled={!captchaValue}
+              >
+                Submit Feedback
+              </Button>
+            </Stack>
+          </form>
+          <Snackbar
+            open={openSnackbar}
+            autoHideDuration={autoHideDuration}
+            onClose={handleCloseSnackbar}
+            anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+          >
+            <SnackbarContent
+              message="Feedback submitted, thank you!"
+              sx={{ backgroundColor: 'primary.main', position: 'relative' }}
+              action={
+                <LinearProgress
+                  variant="determinate"
+                  value={progress}
+                  sx={{
+                    position: 'absolute',
+                    bottom: 0,
+                    left: 0,
+                    width: '100%',
+                  }}
+                />
+              }
+            />
+          </Snackbar>
+        </Paper>
       </Stack>
-    </Box>
+    </Stack>
   );
 };
