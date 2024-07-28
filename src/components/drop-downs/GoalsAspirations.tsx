@@ -1,9 +1,9 @@
 import React, { useRef, useState } from 'react';
 import { Stack, Popover, Typography, Paper, IconButton } from '@mui/material';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
+import ClearIcon from '@mui/icons-material/Clear';
 import city_roadmap from '../../assets/city_roadmap.jpeg';
 import background from '../../assets/secondary_background.png';
-import ClearIcon from '@mui/icons-material/Clear';
 
 const goalsData = [
   {
@@ -105,7 +105,6 @@ export const GoalsAspirations: React.FC = () => {
       >
         <Stack
           sx={{
-            display: 'flex',
             alignItems: 'center',
             backgroundImage: `url(${city_roadmap})`,
             backgroundSize: 'cover',

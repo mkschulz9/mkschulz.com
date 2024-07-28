@@ -8,17 +8,21 @@ import {
   LinearProgress,
   Paper,
   Typography,
+  useMediaQuery,
+  useTheme,
 } from '@mui/material';
-import background from '../../assets/background_feedback.png';
 import ReCAPTCHA from 'react-google-recaptcha';
+import background from '../../assets/background_feedback.png';
 
 export const Feedback: React.FC = () => {
+  const theme = useTheme();
   const [firstName, setFirstName] = useState('');
   const [email, setEmail] = useState('');
   const [comments, setComments] = useState('');
   const [openSnackbar, setOpenSnackbar] = useState(false);
   const [progress, setProgress] = useState(0);
   const [captchaValue, setCaptchaValue] = useState('');
+  const isXs = useMediaQuery(theme.breakpoints.down('sm'));
 
   const autoHideDuration = 3000;
 
@@ -167,6 +171,7 @@ export const Feedback: React.FC = () => {
               <ReCAPTCHA
                 sitekey="6Le_VxMqAAAAAJgM3z8k5X3TovRt0qnS2guYZrs6"
                 onChange={onCaptchaChange}
+                size={isXs ? 'compact' : 'normal'}
               />
               <Button
                 type="submit"

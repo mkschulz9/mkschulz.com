@@ -1,7 +1,5 @@
-import * as React from 'react';
+import React from 'react';
 import {
-  Box,
-  Card,
   CardContent,
   CardMedia,
   IconButton,
@@ -10,7 +8,6 @@ import {
   Typography,
   useTheme,
 } from '@mui/material';
-import { autoPlay } from 'react-swipeable-views-utils';
 import SwipeableViews from 'react-swipeable-views';
 import MobileStepper from '@mui/material/MobileStepper';
 import Button from '@mui/material/Button';
@@ -18,36 +15,20 @@ import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import bits_background from '../../assets/bits_background.jpg';
-import personal_website_github from '../../assets/personal_website_github.png';
+import website_github_img from '../../assets/personal_website_github.png';
 import poster_img from '../../assets/mindmap_poster.jpg';
 import coming_soon_img from '../../assets/coming_soon.jpg';
-
-const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 export const FeaturedProjects: React.FC = () => {
   const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
-  const [interval, setInterval] = React.useState(5000);
-  const timerRef = React.useRef<NodeJS.Timeout | null>(null);
-
-  const handleManualNav = () => {
-    if (timerRef.current) {
-      clearTimeout(timerRef.current);
-    }
-    setInterval(20000);
-    timerRef.current = setTimeout(() => {
-      setInterval(5000);
-    }, 20000);
-  };
 
   const handleNext = () => {
     setActiveStep(prevActiveStep => prevActiveStep + 1);
-    handleManualNav();
   };
 
   const handleBack = () => {
     setActiveStep(prevActiveStep => prevActiveStep - 1);
-    handleManualNav();
   };
 
   const handleStepChange = (step: number) => {
@@ -59,14 +40,14 @@ export const FeaturedProjects: React.FC = () => {
       title: 'mkschulz9.github.io',
       content:
         'This website! I built it from scratch, incorporating modern web development practices, including CI/CD actions, automatic linting and formatting, and commit hooks. Check out the link below to see how it all works under the hood!',
-      image: personal_website_github,
+      img: website_github_img,
       githubLink: 'https://github.com/mkschulz9/mkschulz9.github.io',
     },
     {
       title: 'Emotion Classification',
       content:
         'In this group project, I led a team of three in developing two custom deep learning models for classifying emotions across facial images and textual data. Find our detailed report by visiting the link below!',
-      image: poster_img,
+      img: poster_img,
       githubLink:
         'https://github.com/marreddysainikhilreddy/emotion-classification',
     },
@@ -74,7 +55,7 @@ export const FeaturedProjects: React.FC = () => {
       title: 'Personal Chatbot (In-progress)',
       content:
         'I fine-tuned an LLM, training it on information about my education, work experience, aspirations, and more! I am currently working on getting the fine-tuned model deployed and an interface setup. Check back soon!',
-      image: coming_soon_img,
+      img: coming_soon_img,
     },
   ];
 
@@ -83,7 +64,6 @@ export const FeaturedProjects: React.FC = () => {
   return (
     <Stack
       sx={{
-        display: 'flex',
         alignItems: 'center',
         backgroundImage: `url(${bits_background})`,
         backgroundSize: 'cover',
@@ -101,11 +81,7 @@ export const FeaturedProjects: React.FC = () => {
             borderRadius: '10px',
           }}
         >
-          <AutoPlaySwipeableViews
-            index={activeStep}
-            onChangeIndex={handleStepChange}
-            interval={interval}
-          >
+          <SwipeableViews index={activeStep} onChangeIndex={handleStepChange}>
             {projects.map((project, index) => (
               <Stack key={index} maxWidth={440}>
                 <CardMedia
@@ -114,7 +90,7 @@ export const FeaturedProjects: React.FC = () => {
                     borderTopLeftRadius: '10px',
                     borderTopRightRadius: '10px',
                   }}
-                  image={project.image}
+                  image={project.img}
                 />
                 <CardContent sx={{ bgcolor: 'secondary.main' }}>
                   <Typography gutterBottom variant="h5">
@@ -136,7 +112,7 @@ export const FeaturedProjects: React.FC = () => {
                 </CardContent>
               </Stack>
             ))}
-          </AutoPlaySwipeableViews>
+          </SwipeableViews>
           <MobileStepper
             sx={{
               borderBottomLeftRadius: '10px',

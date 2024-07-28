@@ -1,22 +1,20 @@
 import { Stack } from '@mui/material';
 import { ExpandableList } from '../lib/ExpandableList';
-import { WelcomeAboutMe } from './WelcomeAboutMe';
-import { GoalsAspirations } from './GoalsAspirations';
-import { FeaturedProjects } from './FeaturedProjects';
-import { Experience } from './Experience/Experience';
-import { Feedback } from './Feedback';
 import BubbleChartIcon from '@mui/icons-material/BubbleChart';
 import CodeIcon from '@mui/icons-material/Code';
 import FlagIcon from '@mui/icons-material/Flag';
 import ForumIcon from '@mui/icons-material/Forum';
 import WorkHistoryIcon from '@mui/icons-material/WorkHistory';
+import { WelcomeAboutMe } from './WelcomeAboutMe';
+import { GoalsAspirations } from './GoalsAspirations';
+import { FeaturedProjects } from './FeaturedProjects';
+import { Experience } from './Experience/Experience';
+import { Feedback } from './Feedback';
 
 export const DropDowns: React.FC = ({}) => {
   return (
     <Stack
       sx={{
-        display: 'flex',
-        flexDirection: 'column',
         width: '100%',
         gap: 0.5,
       }}

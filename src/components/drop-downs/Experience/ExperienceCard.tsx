@@ -8,7 +8,7 @@ import {
   TimelineSeparator,
 } from '@mui/lab';
 import { Typography, Collapse, useMediaQuery, useTheme } from '@mui/material';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 interface ExperienceCardProps {
   year: number;
@@ -23,16 +23,6 @@ export const ExperienceCard: React.FC<ExperienceCardProps> = props => {
   const isXs = useMediaQuery(theme.breakpoints.down('sm'));
   const isBtwnMdLg = useMediaQuery(theme.breakpoints.between('md', 'lg'));
   const [expanded, setExpanded] = useState(props.defaultOpen ?? false);
-
-  const logScreenWidth = () => {
-    console.log('Current screen width:', window.innerWidth);
-  };
-
-  useEffect(() => {
-    logScreenWidth(); // Log initial width
-    window.addEventListener('resize', logScreenWidth); // Log width on resize
-    return () => window.removeEventListener('resize', logScreenWidth); // Clean up event listener
-  }, []);
 
   const toggleDropdown = () => {
     setExpanded(!expanded);

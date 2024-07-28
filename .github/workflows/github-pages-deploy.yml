@@ -30,6 +30,7 @@ jobs:
         env:
           VITE_REACT_APP_API_KEY: ${{ secrets.VITE_REACT_APP_API_KEY }}
           VITE_REACT_APP_API_URL: Mkschulzgithubio-backend-env.eba-bartikhs.us-east-1.elasticbeanstalk.com
+          VITE_GTM_ID: ${{ secrets.VITE_GTM_ID }}
 
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v4

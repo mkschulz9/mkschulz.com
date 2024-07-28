@@ -8,13 +8,7 @@ interface PortraitNameProps {
 
 export const PortraitName: React.FC<PortraitNameProps> = props => {
   return (
-    <Stack
-      sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-      }}
-    >
+    <Stack alignItems={'center'}>
       <Avatar
         src={davis_portrait}
         sx={{
@@ -22,7 +16,7 @@ export const PortraitName: React.FC<PortraitNameProps> = props => {
           height: { xs: 220, md: 210 },
         }}
       />
-      <StyledTitle fontSize={35}>{props.name}</StyledTitle>
+      <StyledTitle fontSize={40}>{props.name}</StyledTitle>
     </Stack>
   );
 };

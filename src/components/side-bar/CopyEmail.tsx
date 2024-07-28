@@ -28,16 +28,14 @@ export const EmailCopyTooltip: React.FC = ({}) => {
     >
       <Stack
         sx={{
-          display: 'flex',
           flexDirection: 'row',
-          alignItems: 'center',
           gap: 0.75,
           width: 'fit-content',
           cursor: 'pointer',
         }}
         onClick={copyToClipboard}
       >
-        <EmailIcon aria-label="email" />
+        <EmailIcon />
         <Typography sx={{ textDecoration: 'underline' }}>{email}</Typography>
       </Stack>
     </Tooltip>

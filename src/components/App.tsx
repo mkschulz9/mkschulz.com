@@ -1,8 +1,8 @@
 import React from 'react';
+import { ThemeProvider, createTheme, CssBaseline } from '@mui/material';
 import { SideBar } from './side-bar/SideBar';
 import { ResponsiveBox } from './lib/ResponsiveBox';
 import { DropDowns } from './drop-downs/DropDowns';
-import { ThemeProvider, createTheme, CssBaseline } from '@mui/material';
 
 export const App: React.FC = ({}) => {
   const theme = createTheme({
