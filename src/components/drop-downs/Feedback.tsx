@@ -93,11 +93,6 @@ export const Feedback: React.FC = () => {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    if (!captchaValue) {
-      setErrorMessage('Please complete the captcha');
-      return;
-    }
-
     if (feedback.trim().length < 10) {
       setErrorMessage('Feedback must be at least 10 characters long.');
       return;
