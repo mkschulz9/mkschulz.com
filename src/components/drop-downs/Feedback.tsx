@@ -14,7 +14,7 @@ import {
   Alert,
   AlertTitle,
 } from '@mui/material';
-import ReCAPTCHA from 'react-google-recaptcha';
+import Turnstile from 'react-turnstile';
 import background from '../../assets/background_feedback.png';
 
 export const Feedback: React.FC = () => {
@@ -39,8 +39,8 @@ export const Feedback: React.FC = () => {
     }
   };
 
-  const onCaptchaChange = (value: string) => {
-    setCaptchaValue(value);
+  const onCaptchaChange = (token: string) => {
+    setCaptchaValue(token);
   };
 
   const handleCloseSnackbar = () => {
@@ -94,7 +94,7 @@ export const Feedback: React.FC = () => {
     event.preventDefault();
 
     if (!captchaValue) {
-      setErrorMessage('Please complete the reCAPTCHA');
+      setErrorMessage('Please complete the captcha');
       return;
     }
 
@@ -106,7 +106,7 @@ export const Feedback: React.FC = () => {
     setLoading(true);
     setErrorMessage('');
 
-    const apiUrl = 'https://mkschulz.com';
+    const apiUrl = import.meta.env.VITE_API_URL;
 
     try {
       const headers: HeadersInit = {
@@ -116,7 +116,7 @@ export const Feedback: React.FC = () => {
       const response = await fetch(`${apiUrl}/feedback`, {
         method: 'POST',
         headers,
-        body: JSON.stringify({ feedback: feedback }),
+        body: JSON.stringify({ feedback, token: captchaValue }),
       });
 
       if (!response.ok) {
@@ -222,9 +222,10 @@ export const Feedback: React.FC = () => {
                   />
                 </Alert>
               )}
-              <ReCAPTCHA
-                sitekey="6LdJ2xsqAAAAABUlzx3hlZ_LXlb2EUfa3B-kSEiq"
-                onChange={onCaptchaChange}
+              <Turnstile
+                sitekey="0x4AAAAAAAgKJLosto7S8Tg2"
+                onVerify={onCaptchaChange}
+                theme="light"
                 size={isXs ? 'compact' : 'normal'}
               />
               <Button
