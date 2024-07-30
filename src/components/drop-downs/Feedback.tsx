@@ -10,50 +10,103 @@ import {
   Typography,
   useMediaQuery,
   useTheme,
+  CircularProgress,
+  Alert,
+  AlertTitle,
 } from '@mui/material';
 import ReCAPTCHA from 'react-google-recaptcha';
 import background from '../../assets/background_feedback.png';
 
 export const Feedback: React.FC = () => {
   const theme = useTheme();
-  const [firstName, setFirstName] = useState('');
-  const [email, setEmail] = useState('');
-  const [comments, setComments] = useState('');
+  const [feedback, setFeedback] = useState('');
   const [openSnackbar, setOpenSnackbar] = useState(false);
   const [progress, setProgress] = useState(0);
   const [captchaValue, setCaptchaValue] = useState('');
   const isXs = useMediaQuery(theme.breakpoints.down('sm'));
-
+  const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
+  const [errorProgress, setErrorProgress] = useState(0);
+  const [inputError, setInputError] = useState('');
   const autoHideDuration = 3000;
 
-  const handleFirstNameChange = (
-    event: React.ChangeEvent<HTMLInputElement>
-  ) => {
-    setFirstName(event.target.value);
-  };
-
-  const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setEmail(event.target.value);
-  };
-
-  const handleCommentsChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setComments(event.target.value);
+  const handleFeedbackChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setFeedback(event.target.value);
+    if (event.target.value.trim().length < 10) {
+      setInputError('Feedback must be at least 10 characters long.');
+    } else {
+      setInputError('');
+    }
   };
 
   const onCaptchaChange = (value: string) => {
     setCaptchaValue(value);
   };
 
+  const handleCloseSnackbar = () => {
+    setOpenSnackbar(false);
+  };
+
+  useEffect(() => {
+    let snackbarTimer: NodeJS.Timeout | undefined;
+    let errorTimer: NodeJS.Timeout | undefined;
+
+    if (openSnackbar) {
+      setProgress(0);
+      snackbarTimer = setInterval(() => {
+        setProgress(prevProgress => {
+          if (prevProgress < 100) {
+            return prevProgress + 100 / (autoHideDuration / 116.5);
+          }
+          clearInterval(snackbarTimer);
+          return 100;
+        });
+      }, 100);
+    }
+
+    if (errorMessage) {
+      setErrorProgress(0);
+      errorTimer = setInterval(() => {
+        setErrorProgress(prevProgress => {
+          if (prevProgress < 100) {
+            return prevProgress + 100 / (10000 / 116.5); // 10 seconds
+          }
+          clearInterval(errorTimer);
+          setErrorMessage('');
+          return 100;
+        });
+      }, 100);
+    }
+
+    return () => {
+      if (snackbarTimer) {
+        clearInterval(snackbarTimer);
+        setProgress(0);
+      }
+      if (errorTimer) {
+        clearInterval(errorTimer);
+        setErrorProgress(0);
+      }
+    };
+  }, [openSnackbar, errorMessage, autoHideDuration]);
+
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
     if (!captchaValue) {
-      alert('Please complete the reCAPTCHA');
+      setErrorMessage('Please complete the reCAPTCHA');
       return;
     }
 
-    const apiUrl: string | undefined = (import.meta as any).env
-      .VITE_REACT_APP_API_URL;
-    console.log('API URL:', apiUrl);
+    if (feedback.trim().length < 10) {
+      setErrorMessage('Feedback must be at least 10 characters long.');
+      return;
+    }
+
+    setLoading(true);
+    setErrorMessage('');
+
+    const apiUrl = 'https://mkschulz.com';
 
     try {
       const headers: HeadersInit = {
@@ -63,46 +116,23 @@ export const Feedback: React.FC = () => {
       const response = await fetch(`${apiUrl}/feedback`, {
         method: 'POST',
         headers,
-        body: JSON.stringify({ feedback: comments }),
+        body: JSON.stringify({ feedback: feedback }),
       });
 
       if (!response.ok) {
-        throw new Error('Network response was not ok');
+        const errorData = await response.json();
+        throw new Error(errorData.message || 'Network response was not ok');
       }
 
-      setFirstName('');
-      setEmail('');
-      setComments('');
+      setFeedback('');
       setOpenSnackbar(true);
-      setProgress(0);
-    } catch (error) {
+    } catch (error: any) {
       console.error('Feedback Submission Error:', error);
-      alert('Failed to submit feedback. Please try again.');
+      setErrorMessage(`Failed to submit feedback: ${error.message}`);
+    } finally {
+      setLoading(false);
     }
   };
-
-  const handleCloseSnackbar = () => {
-    setOpenSnackbar(false);
-  };
-
-  useEffect(() => {
-    let timer: NodeJS.Timeout | undefined;
-    if (openSnackbar) {
-      setProgress(0);
-      timer = setInterval(() => {
-        setProgress(prevProgress => {
-          if (prevProgress < 100) {
-            return prevProgress + 100 / (autoHideDuration / 116.5);
-          }
-          clearInterval(timer);
-          return 100;
-        });
-      }, 100);
-    }
-    return () => {
-      if (timer) clearInterval(timer);
-    };
-  }, [openSnackbar, autoHideDuration]);
 
   return (
     <Stack>
@@ -134,8 +164,26 @@ export const Feedback: React.FC = () => {
             p: 2.5,
             borderRadius: '10px',
             width: '80%',
+            position: 'relative',
           }}
         >
+          {loading && (
+            <Stack
+              justifyContent="center"
+              alignItems="center"
+              sx={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                backgroundColor: 'rgba(255, 255, 255, 0.8)',
+                zIndex: 1,
+              }}
+            >
+              <CircularProgress />
+            </Stack>
+          )}
           <form onSubmit={handleSubmit}>
             <Stack
               spacing={2}
@@ -144,30 +192,36 @@ export const Feedback: React.FC = () => {
               alignItems="center"
             >
               <TextField
-                label="Name"
+                label="Feedback"
                 variant="outlined"
-                value={firstName}
-                onChange={handleFirstNameChange}
-                sx={{ width: '90%' }}
-              />
-              <TextField
-                label="Email"
-                variant="outlined"
-                value={email}
-                onChange={handleEmailChange}
-                type="email"
-                sx={{ width: '90%' }}
-              />
-              <TextField
-                label="Comments"
-                variant="outlined"
-                value={comments}
-                onChange={handleCommentsChange}
+                value={feedback}
+                onChange={handleFeedbackChange}
                 multiline
                 rows={4}
                 required
+                error={!!inputError}
+                helperText={inputError}
                 sx={{ width: '90%' }}
               />
+              {errorMessage && (
+                <Alert
+                  severity="error"
+                  sx={{ width: '90%', position: 'relative' }}
+                >
+                  <AlertTitle>Error</AlertTitle>
+                  {errorMessage}
+                  <LinearProgress
+                    variant="determinate"
+                    value={errorProgress}
+                    sx={{
+                      position: 'absolute',
+                      bottom: 0,
+                      left: 0,
+                      width: '100%',
+                    }}
+                  />
+                </Alert>
+              )}
               <ReCAPTCHA
                 sitekey="6Le_VxMqAAAAAJgM3z8k5X3TovRt0qnS2guYZrs6"
                 onChange={onCaptchaChange}
@@ -178,9 +232,9 @@ export const Feedback: React.FC = () => {
                 variant="contained"
                 color="primary"
                 sx={{ width: '50%' }}
-                disabled={!captchaValue}
+                disabled={!!(!captchaValue || loading || inputError)}
               >
-                Submit Feedback
+                Submit
               </Button>
             </Stack>
           </form>
