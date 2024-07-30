@@ -223,7 +223,7 @@ export const Feedback: React.FC = () => {
                 </Alert>
               )}
               <ReCAPTCHA
-                sitekey="6Le_VxMqAAAAAJgM3z8k5X3TovRt0qnS2guYZrs6"
+                sitekey="6LdJ2xsqAAAAABUlzx3hlZ_LXlb2EUfa3B-kSEiq"
                 onChange={onCaptchaChange}
                 size={isXs ? 'compact' : 'normal'}
               />
