@@ -69,7 +69,7 @@ export const Feedback: React.FC = () => {
       errorTimer = setInterval(() => {
         setErrorProgress(prevProgress => {
           if (prevProgress < 100) {
-            return prevProgress + 100 / (10000 / 116.5); // 10 seconds
+            return prevProgress + 100 / (20000 / 116.5); // 15 seconds
           }
           clearInterval(errorTimer);
           setErrorMessage('');
@@ -104,6 +104,8 @@ export const Feedback: React.FC = () => {
     const apiUrl =
       import.meta.env.VITE_API_URL ||
       'http://mkschulz.us-east-1.elasticbeanstalk.com/';
+
+    console.log('API URL: ', apiUrl);
 
     try {
       const headers: HeadersInit = {
@@ -230,7 +232,7 @@ export const Feedback: React.FC = () => {
                 variant="contained"
                 color="primary"
                 sx={{ width: '50%' }}
-                disabled={!!(!captchaValue || loading || inputError)}
+                //disabled={!!(!captchaValue || loading || inputError)}
               >
                 Submit
               </Button>
