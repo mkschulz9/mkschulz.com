@@ -103,9 +103,9 @@ export const Feedback: React.FC = () => {
 
     const apiUrl =
       import.meta.env.VITE_API_URL ||
-      'http://mkschulz.us-east-1.elasticbeanstalk.com/';
+      'https://mkschulz.us-east-1.elasticbeanstalk.com/';
 
-    console.log('API URL: ', apiUrl);
+    console.log('API URL: ', import.meta.env.VITE_API_URL);
 
     try {
       const headers: HeadersInit = {

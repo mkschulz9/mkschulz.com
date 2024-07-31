@@ -7,7 +7,7 @@ const tagManagerArgs = {
   gtmId: import.meta.env.VITE_GTM_ID || 'G-823TKZPV5F',
 };
 
-console.log('Google Tag Args: ', tagManagerArgs);
+console.log('Google Tag ID: ', import.meta.env.VITE_GTM_ID);
 
 TagManager.initialize(tagManagerArgs);
 
