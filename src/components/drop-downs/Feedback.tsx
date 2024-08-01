@@ -101,9 +101,7 @@ export const Feedback: React.FC = () => {
     setLoading(true);
     setErrorMessage('');
 
-    const apiUrl =
-      import.meta.env.VITE_API_URL ||
-      'http://mkschulz.us-east-1.elasticbeanstalk.com:8080';
+    const apiUrl = import.meta.env.VITE_API_URL || 'https://api.mkschulz.com';
 
     console.log('API URL: ', import.meta.env.VITE_API_URL);
 
