@@ -103,7 +103,7 @@ export const Feedback: React.FC = () => {
 
     const apiUrl =
       import.meta.env.VITE_API_URL ||
-      'https://mkschulz.us-east-1.elasticbeanstalk.com';
+      'https://mkschulz.us-east-1.elasticbeanstalk.com:8080';
 
     console.log('API URL: ', import.meta.env.VITE_API_URL);
 
@@ -232,7 +232,7 @@ export const Feedback: React.FC = () => {
                 variant="contained"
                 color="primary"
                 sx={{ width: '50%' }}
-                //disabled={!!(!captchaValue || loading || inputError)}
+                disabled={!!(!captchaValue || loading || inputError)}
               >
                 Submit
               </Button>
