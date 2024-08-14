@@ -113,7 +113,7 @@ export const Feedback: React.FC = () => {
       const response = await fetch(`${apiUrl}/feedback`, {
         method: 'POST',
         headers,
-        body: JSON.stringify({ feedback, token: captchaValue }),
+        body: JSON.stringify({ feedback: feedback }),
       });
 
       if (!response.ok) {
@@ -125,7 +125,7 @@ export const Feedback: React.FC = () => {
       setOpenSnackbar(true);
     } catch (error: any) {
       console.error('Feedback Submission Error:', error);
-      setErrorMessage(`Failed to submit feedback: ${error.message}`);
+      setErrorMessage(`Error: ${error.message}`);
     } finally {
       setLoading(false);
     }
