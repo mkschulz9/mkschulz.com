@@ -1,6 +1,7 @@
 import { Timeline } from '@mui/lab';
 import React from 'react';
 import { Paper } from '@mui/material';
+import TouchAppIcon from '@mui/icons-material/TouchApp';
 import { ExperienceCard } from './ExperienceCard';
 import background from '../../../assets/background_experience.avif';
 
@@ -55,11 +56,21 @@ export const Experience: React.FC = () => {
     <Paper
       elevation={3}
       sx={{
+        position: 'relative',
         backgroundImage: `url(${background})`,
         backgroundSize: 'cover',
         borderRadius: '5px',
       }}
     >
+      <TouchAppIcon
+        sx={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          margin: 1.5,
+        }}
+      />
+
       <Timeline position="alternate">
         {experiences.map((experience, index) => (
           <ExperienceCard
