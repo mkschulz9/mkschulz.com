@@ -1,9 +1,10 @@
 # Matthew Schulz's Personal Website
 
 - Welcome to the behind the scenes of Matthew Schulz's personal website! This
-  website is a React application built from scratch that showcases some of
-  Matthew's projects and more. The website is hosted on GitHub Pages and can be
-  accessed at [mkschulz9.github.io](https://mkschulz9.github.io).
+  site is a single-page application (SPA) built from scratch that showcases
+  Matthew's projects, work experience, and more. The website is hosted on
+  [GitHub Pages](https://pages.github.com/) and can be accessed securly at
+  [mkschulz.com](https://mkschulz.com/).
 
 > **_NOTE:_** This website is a work in progress and is constantly being
 > updated.

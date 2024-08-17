@@ -17,16 +17,21 @@ import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import bits_background from '../../assets/bits_background.jpg';
-import website_github_img from '../../assets/personal_website_github.png';
-import aws_logo from '../../assets/aws_logo.webp';
+import aws_logo from '../../assets/aws_logo.png';
 import poster_img from '../../assets/mindmap_poster.jpg';
 import coming_soon_img from '../../assets/coming_soon.jpg';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import react_logo from '../../assets/react_logo.png';
 import typescript_logo from '../../assets/typescript_logo.png';
 import vite_logo from '../../assets/vite_logo.jpg';
-import eslint_prettier_logo from '../../assets/prettier_eslint_logo.png';
-import mui_logo from '../../assets/mui_logo.png';
+import prettier_logo from '../../assets/prettier_logo.png';
+import eslint_logo from '../../assets/eslint_logo.png';
+import mui_logo from '../../assets/mui_logo.jpg';
+import express_js_logo from '../../assets/express-js-logo.png';
+import swagger_logo from '../../assets/swagger_logo.png';
+import beanstalk_logo from '../../assets/beanstalk_logo.png';
+import ec2_logo from '../../assets/ec2_logo.png';
+import route53_logo from '../../assets/route53_logo.png';
 
 export const FeaturedProjects: React.FC = () => {
   const theme = useTheme();
@@ -60,18 +65,21 @@ export const FeaturedProjects: React.FC = () => {
           uses <strong>Vite</strong>, <strong>pnpm</strong>, and
           <strong> CI/CD pipelines</strong> through
           <strong> GitHub Actions</strong> for seamless development and
-          deployment. To ensure top-notch code quality, <strong>ESLint</strong>,
-          <strong> Prettier</strong>, and <strong>commitlint</strong> are in
-          place, along with <strong>husky git hooks</strong> for enforcing
-          commit standards. For a closer look, check out the link below!
+          deployment. To ensure top-notch code quality, <strong>ESLint </strong>
+          and
+          <strong> Prettier</strong> are in place, along with{' '}
+          <strong>commitlint</strong> and <strong>husky git hooks</strong> for
+          enforcing commit standards. For a closer look, check out the project's
+          GitHub below!
         </>,
       ],
       imgList: [
         react_logo,
         typescript_logo,
-        eslint_prettier_logo,
         mui_logo,
         vite_logo,
+        prettier_logo,
+        eslint_logo,
       ],
       githubLink: 'https://github.com/mkschulz9/mkschulz.com',
     },
@@ -89,9 +97,7 @@ export const FeaturedProjects: React.FC = () => {
           <strong> F1 score</strong> and <strong>accuracy</strong>.
         </>,
         <>
-          Our models' performances significantly improve, evaluated on datasets
-          like <strong>GoEmotions</strong> and <strong>FER2013</strong>. The
-          transformer model achieves a validation
+          Overall, the transformer model achieves a validation
           <strong> F1 score of 59.03%</strong> (a 10% improvement), and the CNN
           reaches a validation <strong>accuracy of 90.33%</strong>. Check out
           the GitHub linked below to learn more!
@@ -109,7 +115,7 @@ export const FeaturedProjects: React.FC = () => {
           <strong> Express.js</strong> and has security features such as
           <strong> CORS</strong>, <strong>Helmet</strong>, and API
           <strong> rate limiting</strong>. API documentation is provided via
-          <strong> Swagger</strong> at the <strong>/docs</strong> endpoint.
+          <strong> Swagger</strong>.
         </>,
         <>
           The server is deployed using <strong>AWS Elastic Beanstalk</strong>,
@@ -121,7 +127,14 @@ export const FeaturedProjects: React.FC = () => {
           API Docs.
         </>,
       ],
-      imgList: [aws_logo],
+      imgList: [
+        aws_logo,
+        express_js_logo,
+        swagger_logo,
+        beanstalk_logo,
+        ec2_logo,
+        route53_logo,
+      ],
       githubLink: 'https://api.mkschulz.com/docs',
       alternateIcon: <OpenInNewIcon />,
     },
@@ -131,7 +144,7 @@ export const FeaturedProjects: React.FC = () => {
         <>
           I fine-tuned a <strong>large language model </strong>
           (meta-llama-3-8B-Instruct) with the vision of it serving as a chatbot
-          that can answer questions about me! I use
+          that can answer questions about me! To fine-tune, I use
           <strong> Hugging Face</strong> with techniques like
           <strong> QLoRA</strong> and <strong>4-bit quantization</strong> to
           optimize memory usage and performance.
@@ -141,7 +154,7 @@ export const FeaturedProjects: React.FC = () => {
           techniques like <strong>flash attention</strong> and
           <strong> TF32 precision</strong> to boost computational speed on
           compatible GPUs. While this project is a work in progress, please
-          follow the link below to learn how I fine-tuned the model!
+          follow the link below to learn more on how I fine-tuned the model!
         </>,
       ],
       imgList: [coming_soon_img],
@@ -176,11 +189,10 @@ export const FeaturedProjects: React.FC = () => {
           <SwipeableViews index={activeStep} onChangeIndex={handleStepChange}>
             {projects.map((project, index) => (
               <Stack key={index} maxWidth={440}>
-                {/* Image Collage */}
                 {project.imgList.length === 1 ? (
                   <CardMedia
                     sx={{
-                      height: 240,
+                      height: 280,
                       borderTopLeftRadius: '10px',
                       borderTopRightRadius: '10px',
                     }}
@@ -188,14 +200,14 @@ export const FeaturedProjects: React.FC = () => {
                   />
                 ) : (
                   <ImageList
+                    rowHeight={140}
                     cols={project.imgList.length > 1 ? 3 : 1}
-                    rowHeight={120}
+                    sx={{ mt: 0, mb: 0, overflow: 'hidden' }}
                   >
                     {project.imgList.map((img, idx) => (
                       <ImageListItem key={idx}>
                         <img
                           src={img}
-                          alt={`Project ${project.title}`}
                           loading="lazy"
                           style={{
                             borderRadius: '5px',
@@ -231,7 +243,7 @@ export const FeaturedProjects: React.FC = () => {
                       {project.alternateIcon ? (
                         project.alternateIcon
                       ) : (
-                        <GitHubIcon /> // Replace this with your default icon
+                        <GitHubIcon />
                       )}
                     </IconButton>
                   )}

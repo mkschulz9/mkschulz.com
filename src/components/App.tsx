@@ -3,6 +3,7 @@ import { ThemeProvider, createTheme, CssBaseline } from '@mui/material';
 import { SideBar } from './side-bar/SideBar';
 import { ResponsiveBox } from './lib/ResponsiveBox';
 import { DropDowns } from './drop-downs/DropDowns';
+import { Footer } from './Footer';
 
 export const App: React.FC = ({}) => {
   const theme = createTheme({
@@ -45,6 +46,7 @@ export const App: React.FC = ({}) => {
         <SideBar />
         <DropDowns />
       </ResponsiveBox>
+      <Footer />
     </ThemeProvider>
   );
 };

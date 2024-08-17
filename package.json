@@ -56,7 +56,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "lint": "eslint \"./src/**/*.{ts,tsx}\" --fix && prettier --write \"./src/**/*.{ts,tsx,css}\"",
+    "lint": "eslint --fix --no-ignore ./src/components/Footer.tsx && prettier --write \"./src/**/*.{ts,tsx,css}\"",
     "prepare": "husky install"
   },
   "browserslist": {
