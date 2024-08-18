@@ -31,9 +31,13 @@ export const Feedback: React.FC = () => {
   const autoHideDuration = 3000;
 
   const handleFeedbackChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const feedbackText = event.target.value.trim();
     setFeedback(event.target.value);
-    if (event.target.value.trim().length < 10) {
+
+    if (feedbackText.length < 10) {
       setInputError('Feedback must be at least 10 characters long.');
+    } else if (feedbackText.length > 500) {
+      setInputError('Feedback must be less than 500 characters.');
     } else {
       setInputError('');
     }
