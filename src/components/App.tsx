@@ -4,6 +4,7 @@ import { SideBar } from './side-bar/SideBar';
 import { ResponsiveBox } from './lib/ResponsiveBox';
 import { DropDowns } from './drop-downs/DropDowns';
 import { Footer } from './Footer';
+import TagManager from 'react-gtm-module';
 
 declare global {
   interface Window {
@@ -13,13 +14,13 @@ declare global {
 
 export const App: React.FC = ({}) => {
   useEffect(() => {
-    window.dataLayer.push({
-      event: 'pageview',
-      page: {
-        url: window.location.href,
-        title: document.title,
+    const tagManagerArgs = {
+      dataLayer: {
+        event: 'pageview',
+        page: 'Home',
       },
-    });
+    };
+    TagManager.dataLayer(tagManagerArgs);
   }, []);
 
   const theme = createTheme({
