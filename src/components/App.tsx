@@ -6,12 +6,6 @@ import { DropDowns } from './drop-downs/DropDowns';
 import { Footer } from './Footer';
 import TagManager from 'react-gtm-module';
 
-declare global {
-  interface Window {
-    dataLayer: any[];
-  }
-}
-
 export const App: React.FC = ({}) => {
   useEffect(() => {
     const tagManagerArgs = {
