@@ -14,13 +14,14 @@ export const SideBar: React.FC = ({}) => {
     degree: 'Computer Science (Spec. in AI)',
     startDate: new Date('2023-08-21'),
     endDate: new Date('2025-05-10'),
-    courses: [
+    completedCourses: [
       'Machine Learning',
-      'Large Scale Optimization for ML',
+      'Large Scale Optimization for ML*',
       'Design & Analysis of Algorithms',
       'Foundations of AI',
     ],
     defaultOpen: true,
+    coursesInProgress: ['Advanced Computer Vision*', 'Deep Learning'],
   };
 
   const degreeInfoBatchelors = {
@@ -28,7 +29,7 @@ export const SideBar: React.FC = ({}) => {
     degree: 'Computer Science',
     startDate: new Date('2021-09-10'),
     endDate: new Date('2023-06-10'),
-    courses: [
+    completedCourses: [
       'Computer Architecture',
       'Theory Computation',
       'Probability & Statistics for CS',
@@ -49,7 +50,7 @@ export const SideBar: React.FC = ({}) => {
     degree: 'Computer Science',
     startDate: new Date('2019-09-10'),
     endDate: new Date('2021-05-10'),
-    courses: [
+    completedCourses: [
       'Calculus I',
       'Object Oriented Programming C++',
       'Calculus II',

@@ -18,9 +18,10 @@ export interface DegreeInformationProps {
   degree: string;
   startDate: Date;
   endDate: Date;
-  courses: string[];
+  completedCourses: string[];
   gpa?: string;
   defaultOpen?: boolean;
+  coursesInProgress?: string[];
 }
 
 export const DegreeInformation: React.FC<DegreeInformationProps> = props => {
@@ -67,7 +68,41 @@ export const DegreeInformation: React.FC<DegreeInformationProps> = props => {
     '#3f51b5', // Indigo
   ];
 
-  const getColor = (index: number) => colors[index % colors.length];
+  // Shuffle function to randomize the color array
+  const shuffleArray = (array: string[]) => {
+    return array
+      .map(value => ({ value, sort: Math.random() }))
+      .sort((a, b) => a.sort - b.sort)
+      .map(({ value }) => value);
+  };
+
+  const assignUniqueColors = (
+    completedCourses: string[],
+    inProgressCourses?: string[]
+  ) => {
+    const shuffledColors = shuffleArray(colors);
+    const completedCourseColors = shuffledColors.slice(
+      0,
+      completedCourses.length
+    );
+    const inProgressCourseColors = inProgressCourses
+      ? shuffledColors.slice(
+          completedCourses.length,
+          completedCourses.length + inProgressCourses.length
+        )
+      : [];
+    return { completedCourseColors, inProgressCourseColors };
+  };
+
+  const hasDoctorateCourses =
+    props.completedCourses.some(course => course.includes('*')) ||
+    (props.coursesInProgress &&
+      props.coursesInProgress.some(course => course.includes('*')));
+
+  const { completedCourseColors, inProgressCourseColors } = assignUniqueColors(
+    props.completedCourses,
+    props.coursesInProgress
+  );
 
   let logo = null;
   if (props.degreeType === 'M.S.') {
@@ -141,7 +176,22 @@ export const DegreeInformation: React.FC<DegreeInformationProps> = props => {
             {props.gpa && `(GPA: ${props.gpa})`}
           </Typography>
         </Stack>
-        <CoursesCompleted courses={props.courses} getColor={getColor} />
+        <CoursesCompleted
+          courses={props.completedCourses}
+          getColor={(index: number) => completedCourseColors[index]}
+        />
+        {props.coursesInProgress && (
+          <CoursesCompleted
+            courses={props.coursesInProgress}
+            getColor={(index: number) => inProgressCourseColors[index]}
+            coursesInProgress={true}
+          />
+        )}
+        {hasDoctorateCourses && (
+          <Typography variant="caption">
+            (* = doctorate level course)
+          </Typography>
+        )}
       </Collapse>
     </Stack>
   );
