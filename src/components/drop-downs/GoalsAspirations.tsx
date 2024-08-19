@@ -2,8 +2,8 @@ import React, { useRef, useState } from 'react';
 import { Stack, Popover, Typography, Paper, IconButton } from '@mui/material';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import ClearIcon from '@mui/icons-material/Clear';
-import city_roadmap from '../../assets/city_roadmap.jpeg';
 import background from '../../assets/secondary_background.png';
+import sf_map from '../../assets/sf_map.png';
 
 const goalsData = [
   {
@@ -11,42 +11,42 @@ const goalsData = [
     title: '6 Month Goal',
     description:
       'Within six months, I aim to publish at least one research paper based on my work at the USC AutoDrive Lab.',
-    left: '-38%',
+    left: '23%',
   },
   {
     id: 2,
     title: '1 Year Goal',
     description:
       'After one year, my goals are to graduate from my Master’s program at USC and receive three job offers for full-time employment.',
-    left: '-22%',
+    left: '-19%',
   },
   {
     id: 3,
     title: '3 Year Goal',
     description:
       'Within three years, I aim to progress into a team lead position at my current company and lead projects that produce substantial value.',
-    left: '-3%',
+    left: '3%',
   },
   {
     id: 4,
     title: '5 Year Goal',
     description:
       'After five years, I aim to start my own tech company that is not only successful but also positively influences the lives of others.',
-    left: '-8%',
+    left: '19%',
   },
   {
     id: 5,
     title: '10 Year Goal',
     description:
       'In ten years, I aspire to grow my company to over one million users while keeping the higher purpose of positive impact a focus.',
-    left: '15%',
+    left: '-19%',
   },
   {
     id: 6,
     title: 'Long-term Vision',
     description:
       'I aim to stay updated with the latest advancements in computer science and give back to young professionals through mentorship.',
-    left: '38%',
+    left: '11%',
   },
 ];
 
@@ -106,11 +106,12 @@ export const GoalsAspirations: React.FC = () => {
         <Stack
           sx={{
             alignItems: 'center',
-            backgroundImage: `url(${city_roadmap})`,
+            backgroundImage: `url(${sf_map})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             borderRadius: '10px',
             p: 3,
+            gap: 2.5,
           }}
         >
           {goalsData.map(goal => (
@@ -119,6 +120,10 @@ export const GoalsAspirations: React.FC = () => {
               key={goal.id}
               sx={{
                 left: goal.left,
+                borderRadius: '10px',
+                backgroundColor: 'rgba(255, 255, 255, 0.5)',
+                p: 0,
+                pl: 0.5,
               }}
               onClick={e => handleClick(e, goal)}
             >
@@ -129,22 +134,13 @@ export const GoalsAspirations: React.FC = () => {
                   sx={{
                     fontWeight: 'bold',
                     fontSize: '1.1rem',
-                    backgroundColor: 'rgba(255, 255, 255, 0.5)',
-                    borderRadius: '4px',
                     mr: -0.3,
                   }}
                 >
                   {goal.id}
                 </Typography>
               }
-              {
-                <LocationOnIcon
-                  sx={{
-                    backgroundColor: 'rgba(255, 255, 255, 0.5)',
-                    borderRadius: '10px',
-                  }}
-                />
-              }
+              {<LocationOnIcon />}
             </IconButton>
           ))}
           <Popover

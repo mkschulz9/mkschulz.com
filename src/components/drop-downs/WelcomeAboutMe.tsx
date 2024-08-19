@@ -62,7 +62,7 @@ export const WelcomeAboutMe: React.FC = () => {
       title: 'First Generation American',
       img: first_generation_img,
       content: [
-        'I am a first-generation American. My mother was born and raised in Spain, while my father was born in Germany and raised in England. My parents met in England and moved to the Bay Area in the early 2000s, where I was then born in Berkeley, CA.',
+        'I am a first-generation American. My mother was born and raised in Spain, while my father was born in Germany and raised in England. My parents met in England and moved to the Bay Area in the late 90s, where I was then born in Berkeley, CA.',
         'While growing up, I had the privilege of visiting Spain, Germany, and England. These experiences widened my perspective and taught me to appreciate and be thankful for my life in the United States.',
       ],
     },
