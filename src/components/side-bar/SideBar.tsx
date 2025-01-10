@@ -11,17 +11,22 @@ import { IconText } from './IconText';
 export const SideBar: React.FC = ({}) => {
   const degreeInfoMasters = {
     degreeType: 'M.S.',
-    degree: 'Computer Science (Spec. in AI)',
+    degree: 'Computer Science (Focus: Machine Learning)',
     startDate: new Date('2023-08-21'),
     endDate: new Date('2025-05-10'),
     completedCourses: [
       'Machine Learning',
+      'Deep Learning',
+      'Advanced Computer Vision*',
       'Large Scale Optimization for ML*',
       'Design & Analysis of Algorithms',
       'Foundations of AI',
     ],
     defaultOpen: true,
-    coursesInProgress: ['Advanced Computer Vision*', 'Deep Learning'],
+    coursesInProgress: [
+      'Applied Natural Language Processing',
+      'Database Systems',
+    ],
   };
 
   const degreeInfoBatchelors = {

@@ -30,24 +30,24 @@ const experiences = [
   },
   {
     year: 2023,
-    title: 'STEM Instructor',
+    title: 'STEM Instructor (Current)',
     institution: 'STEMNETICS',
     description:
       'One of my goals in life is to give back, and this role is a step in that direction. I currently work as a STEM instructor for underserved communities in the Los Angeles area. Through educational empowerment, I positively influence children’s lives and hope to inspire future engineers.',
   },
   {
     year: 2024,
-    title: 'ML Student Researcher',
+    title: 'ML Student Researcher (Current)',
     institution: 'USC AutoDrive Lab',
     description:
-      'This is my first hands-on experience with research. I focus on researching, reproducing, and improving SoTA machine learning models in their application to autonomous driving. Guided by Professor Rahul Jain, I am learning to think as a researcher and ride the cutting edge of discovery.',
+      'This is my first hands-on experience with research. I focus on researching, reproducing, and improving SoTA machine learning models in their application to autonomous driving.',
   },
   {
     year: 2024,
     title: 'Integration Engineer Intern',
     institution: 'NASA Deep Space Network (Peraton)',
     description:
-      "I accepted a summer internship at NASA's Deep Space Network. I use an Agile development process to help the organization redesign and reimplement its internal web applications.",
+      "During the Summer of 2024, I worked as an Integration Engineer Intern at NASA's Deep Space Network, where I collaborated with cross-functional teams to redesign and redevelop an internal application from scratch.",
   },
 ];
 
