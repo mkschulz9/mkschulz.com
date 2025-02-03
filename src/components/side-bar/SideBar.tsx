@@ -11,7 +11,7 @@ import { IconText } from './IconText';
 export const SideBar: React.FC = ({}) => {
   const degreeInfoMasters = {
     degreeType: 'M.S.',
-    degree: 'Computer Science (Focus: Machine Learning)',
+    degree: 'Computer Science (Focus: AI/ML)',
     startDate: new Date('2023-08-21'),
     endDate: new Date('2025-05-10'),
     completedCourses: [
