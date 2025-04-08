@@ -8,46 +8,53 @@ import background from '../../../assets/background_experience.avif';
 const experiences = [
   {
     year: 2021,
-    title: 'Graduated A.S. in Computer Science',
+    title: 'A.S. in Computer Science',
     institution: 'Diablo Valley College',
     description:
-      'I discovered my passion for computer science and developed a strong work ethic that has carried me to where I am today.',
+      'While in community college, I discovered my passion for computer science and developed a strong work ethic that has carried me to where I am today.',
     defaultOpen: true,
   },
   {
-    year: 2022,
-    title: 'Lead Software Engineer/Mentor',
-    institution: 'SchedGo (now EduRoute)',
-    description:
-      'This was my first role in a professional company. I led an extension to the startup’s web application, helping the organization win first place at UC Davis’ Big Bang Business Competition 2023. I am grateful for this opportunity and the amazingly dedicated people I met.',
-  },
-  {
-    year: 2023,
-    title: 'Graduated B.S. in Computer Science',
+    year: 2021,
+    title: 'B.S. in Computer Science',
     institution: 'University of California, Davis',
     description:
-      'I found a new passion: AI and machine learning. This area of computer science is very intriguing, and it amazed me how powerful the application potential can be. I also developed an interest in web programming and its ability to bring ideas to life.',
+      'During my time at UC Davis, I found a new passion: AI and machine learning. This area of computer science is incredibly intriguing, and I was amazed by its powerful real-world applications. I also developed a strong interest in web programming and its ability to bring ideas to life through interactive, user-focused experiences.',
+  },
+  {
+    year: 2022,
+    title: 'Lead Software Engineer',
+    institution: 'SchedGo (now EduRoute)',
+    description:
+      'This was my first role in a professional company. I led an extension to the startup’s web application, helping the company win first place at UC Davis’ Big Bang Business Competition 2023.',
   },
   {
     year: 2023,
-    title: 'STEM Instructor (Current)',
-    institution: 'STEMNETICS',
+    title: 'M.S. in Computer Science (Focus: AI/ML)',
+    institution: 'University of Southern California',
     description:
-      'One of my goals in life is to give back, and this role is a step in that direction. I currently work as a STEM instructor for underserved communities in the Los Angeles area. Through educational empowerment, I positively influence children’s lives and hope to inspire future engineers.',
+      'I am currently pursuing a Master of Science in Computer Science (Focus: AI/ML) at USC with an expected graduation date of May 2025. Here I am continuing to stregthen my AI/ML skillset through academic work and personal projects.',
   },
+  // {
+  //   year: 2023,
+  //   title: 'STEM Instructor (Current)',
+  //   institution: 'STEMNETICS',
+  //   description:
+  //     'One of my goals in life is to give back, and this role is a step in that direction. I currently work as a STEM instructor for underserved communities in the Los Angeles area. Through educational empowerment, I positively influence children’s lives and hope to inspire future engineers.',
+  // },
   {
     year: 2024,
-    title: 'ML Student Researcher (Current)',
+    title: 'ML Student Researcher',
     institution: 'USC AutoDrive Lab',
     description:
-      'This is my first hands-on experience with research. I focus on researching, reproducing, and improving SoTA machine learning models in their application to autonomous driving.',
+      'I joined a lab at USC where I focus on researching, reproducing, and improving SoTA machine learning-powered solutions to autonomous driving.',
   },
   {
     year: 2024,
-    title: 'Integration Engineer Intern',
+    title: 'Software Integration Engineer Intern',
     institution: 'NASA Deep Space Network (Peraton)',
     description:
-      "During the Summer of 2024, I worked as an Integration Engineer Intern at NASA's Deep Space Network, where I collaborated with cross-functional teams to redesign and redevelop an internal application from scratch.",
+      "Last Summer, I worked as a Software Integration Engineer Intern at NASA's Deep Space Network, where I collaborated with cross-functional teams to redesign and redevelop an internal application from scratch.",
   },
 ];
 

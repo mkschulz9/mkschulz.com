@@ -18,8 +18,8 @@ import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import bits_background from '../../assets/bits_background.jpg';
 import aws_logo from '../../assets/aws_logo.png';
-import poster_img from '../../assets/mindmap_poster.jpg';
-import coming_soon_img from '../../assets/coming_soon.jpg';
+import reddit_comments from '../../assets/reddit_comments.png';
+import chatbot_screenshot from '../../assets/rag_chatbot_screenshot.png';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import react_logo from '../../assets/react_logo.png';
 import typescript_logo from '../../assets/typescript_logo.png';
@@ -51,26 +51,72 @@ export const FeaturedProjects: React.FC = () => {
 
   const projects = [
     {
-      title: 'mkschulz.com',
+      title: 'RAG Enhanced LLM Chatbot',
       content: [
         <>
-          This website! It is not just any website but a modern single-page
-          application (SPA) crafted with <strong>React</strong>,
-          <strong> TypeScript</strong>, and <strong>Material UI </strong>
+          Interested in learning more about my professional background,
+          including my education, experience, and passions? Click the link below
+          to chat with an AI that can tell you all about it!
+        </>,
+        <>
+          This RAG-enhanced chatbot can answer professional questions about me.
+          It's powered by <strong>DeepSeek's R1 Distill LLaMA 70B</strong>,
+          accessed via <strong>OpenAI's SDK</strong>, and uses{' '}
+          <strong>IBM's Granite-Embedding-125M-English</strong> model for dense
+          vector embeddings and semantic search. This project is hosted on
+          Hugging Face Spaces and brought to life with a Gradio-powered chat
+          interface. Want to see how it was built? Head over to the “Files” tab
+          in the Space for implementation details!
+        </>,
+      ],
+      imgList: [chatbot_screenshot],
+      githubLink: 'https://huggingface.co/spaces/mkschulz9/personal-chatbot',
+      alternateIcon: <OpenInNewIcon />,
+    },
+    {
+      title: 'Multi-Label Emotion Classification in Reddit Comments',
+      content: [
+        <>
+          This project explores the use of both traditional and modern machine
+          learning approaches to classify multiple emotions in Reddit comments.
+          It explores transformer-based architectures such as{' '}
+          <strong>DistilBERT</strong> and <strong>RoBERTa</strong> for feature
+          extraction and classic algorithms like{' '}
+          <strong>Logistic Regression</strong>,{' '}
+          <strong>Support Vector Machines (SVM)</strong>, and{' '}
+          <strong>Perceptron</strong> for classifiying emotions.
+        </>,
+        <>
+          Notably, replacing <strong>TF-IDF</strong> features with{' '}
+          <strong>DistilBERT embeddings</strong> and using{' '}
+          <strong>Binary Relevance</strong> with a <strong>Perceptron</strong>{' '}
+          boosted <strong>F1-score</strong> by over 20%. Check out the project's
+          github below for more in-depth details!
+        </>,
+      ],
+      imgList: [reddit_comments],
+      githubLink:
+        'https://github.com/mkschulz9/multi-label-text-classification',
+    },
+    {
+      title: 'This Website!',
+      content: [
+        <>
+          mkschulz.com isn’t just a website—it's a modern single-page
+          application (SPA) built with <strong>React</strong>,{' '}
+          <strong>TypeScript</strong>, and <strong>Material UI</strong>{' '}
           components.
         </>,
         <>
-          Hosted on <strong>GitHub Pages</strong> under a custom domain with
-          <strong> SSL configuration</strong> for secure browsing, the project
-          uses <strong>Vite</strong>, <strong>pnpm</strong>, and
-          <strong> CI/CD pipelines</strong> through
-          <strong> GitHub Actions</strong> for seamless development and
-          deployment. To ensure top-notch code quality, <strong>ESLint </strong>
-          and
-          <strong> Prettier</strong> are in place, along with{' '}
-          <strong>commitlint</strong> and <strong>husky git hooks</strong> for
-          enforcing commit standards. For a closer look, check out the project's
-          GitHub below!
+          Hosted on <strong>GitHub Pages</strong> with a custom domain and{' '}
+          <strong>SSL configuration</strong> for secure browsing, the project is
+          built using <strong>Vite</strong> and <strong>pnpm</strong>, with{' '}
+          <strong>CI/CD pipelines</strong> powered by{' '}
+          <strong>GitHub Actions</strong> for smooth development and deployment.
+          To maintain high code quality, it uses <strong>ESLint</strong> and{' '}
+          <strong>Prettier</strong>, along with <strong>commitlint</strong> and{' '}
+          <strong>Husky git hooks</strong> to enforce consistent commit
+          standards. Want to dive deeper? Check out the project’s GitHub below!
         </>,
       ],
       imgList: [
@@ -83,85 +129,37 @@ export const FeaturedProjects: React.FC = () => {
       ],
       githubLink: 'https://github.com/mkschulz9/mkschulz.com',
     },
-    {
-      title: 'Emotion Classification using ML',
-      content: [
-        <>
-          In this group project, I led a team of three in exploring
-          <strong> transformer-based models </strong>for text emotion
-          classification and <strong>CNNs </strong>for
-          <strong> facial emotion recognition</strong>. We enhance model
-          performance by customizing architectures like
-          <strong> RoBERTa </strong>for text and a<strong> VGG16 CNN</strong>{' '}
-          for images, focusing on optimizing metrics such as
-          <strong> F1 score</strong> and <strong>accuracy</strong>.
-        </>,
-        <>
-          Overall, the transformer model achieves a validation
-          <strong> F1 score of 59.03%</strong> (a 10% improvement), and the CNN
-          reaches a validation <strong>accuracy of 90.33%</strong>. Check out
-          the GitHub linked below to learn more!
-        </>,
-      ],
-      imgList: [poster_img],
-      githubLink:
-        'https://github.com/marreddysainikhilreddy/emotion-classification',
-    },
-    {
-      title: 'api.mkschulz.com',
-      content: [
-        <>
-          The backend server for this site is built using
-          <strong> Express.js</strong> and has security features such as
-          <strong> CORS</strong>, <strong>Helmet</strong>, and API
-          <strong> rate limiting</strong>. API documentation is provided via
-          <strong> Swagger</strong>.
-        </>,
-        <>
-          The server is deployed using <strong>AWS Elastic Beanstalk</strong>,
-          with <strong>Route 53</strong> managing DNS services, including custom
-          domain configuration. The server runs on an
-          <strong> EC2 instance</strong>, configured with
-          <strong> SSL certificates</strong> that enable <strong>HTTPS </strong>
-          for secure communication. Check out the link below to view the Swagger
-          API Docs.
-        </>,
-      ],
-      imgList: [
-        aws_logo,
-        express_js_logo,
-        swagger_logo,
-        beanstalk_logo,
-        ec2_logo,
-        route53_logo,
-      ],
-      githubLink: 'https://api.mkschulz.com/docs',
-      alternateIcon: <OpenInNewIcon />,
-    },
-    {
-      title: 'Personal Chatbot (In-progress)',
-      content: [
-        <>
-          I fine-tuned a <strong>large language model </strong>
-          (meta-llama-3-8B-Instruct) with the vision of it serving as a chatbot
-          that can answer questions about me! To fine-tune, I use
-          <strong> Hugging Face</strong> with techniques like
-          <strong> QLoRA</strong> and <strong>4-bit quantization</strong> to
-          optimize memory usage and performance.
-        </>,
-        <>
-          I also created a custom conversational dataset and incorporated
-          techniques like <strong>flash attention</strong> and
-          <strong> TF32 precision</strong> to boost computational speed on
-          compatible GPUs. While this project is a work in progress, please
-          follow the link below to learn more on how I fine-tuned the model!
-        </>,
-      ],
-      imgList: [coming_soon_img],
-      githubLink:
-        'https://colab.research.google.com/drive/1Cz4XMSQtlArZ8D0M9wKXWW5f_c8wBM4Z?usp=sharing',
-      alternateIcon: <OpenInNewIcon />,
-    },
+    // {
+    //   title: 'api.mkschulz.com',
+    //   content: [
+    //     <>
+    //       The backend server for this site is built using
+    //       <strong> Express.js</strong> and has security features such as
+    //       <strong> CORS</strong>, <strong>Helmet</strong>, and API
+    //       <strong> rate limiting</strong>. API documentation is provided via
+    //       <strong> Swagger</strong>.
+    //     </>,
+    //     <>
+    //       The server is deployed using <strong>AWS Elastic Beanstalk</strong>,
+    //       with <strong>Route 53</strong> managing DNS services, including custom
+    //       domain configuration. The server runs on an
+    //       <strong> EC2 instance</strong>, configured with
+    //       <strong> SSL certificates</strong> that enable <strong>HTTPS </strong>
+    //       for secure communication. Check out the link below to view the Swagger
+    //       API Docs.
+    //     </>,
+    //   ],
+    //   imgList: [
+    //     aws_logo,
+    //     express_js_logo,
+    //     swagger_logo,
+    //     beanstalk_logo,
+    //     ec2_logo,
+    //     route53_logo,
+    //   ],
+    //   githubLink: 'https://api.mkschulz.com/docs',
+    //   alternateIcon: <OpenInNewIcon />,
+    // },
   ];
 
   const maxSteps = projects.length;

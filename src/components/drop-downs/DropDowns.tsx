@@ -31,7 +31,7 @@ export const DropDowns: React.FC = ({}) => {
         icon={<CodeIcon />}
       ></ExpandableList>
       <ExpandableList
-        primary="EXPERIENCE"
+        primary="PROFESSIONAL TIMELINE"
         children={<Experience />}
         icon={<WorkHistoryIcon />}
       ></ExpandableList>
