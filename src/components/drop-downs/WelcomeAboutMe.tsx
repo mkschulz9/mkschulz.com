@@ -39,7 +39,7 @@ export const WelcomeAboutMe: React.FC = () => {
       img: cs_ai_img,
       content: [
         'Fun fact: I began college as a business major. After my first semester, I knew it was not the right fit, so I switched to computer science, and the rest is history. I fell in love with the fact that whatever idea you could dream up, you could build and bring to life!',
-        'Now, as I complete my M.S. in Computer Science specializing in AI, I have developed a strong passion for this field, and am constantly seeking opportunities to apply the concepts I learn in innovative ways that can solve real-world problems.',
+        'As I complete my M.S. in Computer Science with a focus on AI/ML, I have developed a deep passion for the field and continuously seek opportunities to apply what I learn in innovative, real-world solutions.',
       ],
     },
     {
@@ -94,23 +94,25 @@ export const WelcomeAboutMe: React.FC = () => {
           W&bull;E&bull;L&bull;C&bull;O&bull;M&bull;E
         </Typography>
         <Typography variant="body1" gutterBottom>
-          Welcome to my personal website, built from scratch! This site
-          showcases everything about me. Here, you will find a featured display
-          of my projects detailing the challenges I have tackled and the
-          solutions I have engineered in machine learning and computer science.
-          Additionally, I have included sections about my educational background
-          and work experience to give you a well-rounded view of my expertise
-          and professional growth.
+          Welcome to my personal website—built from scratch to showcase who I am
+          and what I do.
         </Typography>
         <Typography variant="body1" gutterBottom>
-          But that's not all—this website is also a window into the lighter side
-          of my life. Dive into fun facts about me, explore my varied hobbies,
-          and discover my goals and aspirations.
+          Here, you’ll find a curated selection of my projects, highlighting the
+          challenges I’ve tackled and the solutions I’ve developed across
+          machine learning and computer science. You can also explore my
+          educational background and professional experience for a well-rounded
+          view of my technical journey and growth.
+        </Typography>
+        <Typography variant="body1" gutterBottom>
+          Beyond the technical, this site offers a glimpse into the lighter side
+          of my life. From fun facts and personal interests to goals and
+          aspirations, there's plenty to explore.
         </Typography>
         <Typography variant="body1">
-          Thank you for visiting. Whether you're a potential collaborator,
-          recruiter, or simply here out of curiosity, I hope you enjoy exploring
-          and leave inspired by what you find!
+          Thank you for stopping by! Whether you’re a potential collaborator,
+          recruiter, or just curious, I hope you enjoy your visit and leave
+          feeling inspired.
         </Typography>
       </Paper>
       <Stack maxWidth={'95%'} maxHeight={'80%'}>
