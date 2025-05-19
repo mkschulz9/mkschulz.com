@@ -39,7 +39,7 @@ export const WelcomeAboutMe: React.FC = () => {
       img: cs_ai_img,
       content: [
         'Fun fact: I began college as a business major. After my first semester, I knew it was not the right fit, so I switched to computer science, and the rest is history. I fell in love with the fact that whatever idea you could dream up, you could build and bring to life!',
-        'As I complete my M.S. in Computer Science with a focus on AI/ML, I have developed a deep passion for the field and continuously seek opportunities to apply what I learn in innovative, real-world solutions.',
+        'Having earned an M.S. in Computer Science (Focus: AI/ML), I have developed a deep passion for computer science and AI. I continuously seek opportunities to apply my knowledge in innovative, real-world applications.',
       ],
     },
     {
@@ -47,14 +47,14 @@ export const WelcomeAboutMe: React.FC = () => {
       img: entrepreneur_img,
       content: [
         'From a young age, I have always been driven by business! You would likely find me running a lemonade stand on the sidewalk or pitching my lawnmowing services door to door in my neighborhood.',
-        'These early ventures taught me the value of persistence and the importance of consistently pursuing my goals, no matter the obstacles. Fast-forward to today, and I still carry that same passion. I dream of building an innovative, inspiring company that can positively influence others.',
+        'This has instilled persistince into my work ethic and taught me the importance of pursuing my goals, no matter the obstacles. Fast-forward to today, and I still carry that same passion. I dream of building an innovative, inspiring company that can positively influence others.',
       ],
     },
     {
       title: 'World Explorer',
       img: salvador_collage_img,
       content: [
-        'I love traveling! Over the Summer of 2023, I had the opportunity to visit El Salvador. I went zip-lining, hiked volcanoes, swam in volcanic lakes, and even tried surfing for the first time.',
+        'I love traveling! Over Summer 2023, I had the opportunity to visit El Salvador. I went zip-lining, hiked volcanoes, swam in volcanic lakes, and even tried surfing for the first time.',
         'Surfing is a lot harder than it looks, but embracing this challenge taught me resilience and the importance of stepping out of my comfort zone. I value traveling and appreciate the diverse perspectives and experiences it provides!',
       ],
     },
@@ -94,15 +94,15 @@ export const WelcomeAboutMe: React.FC = () => {
           W&bull;E&bull;L&bull;C&bull;O&bull;M&bull;E
         </Typography>
         <Typography variant="body1" gutterBottom>
-          Welcome to my personal website—built from scratch to showcase who I am
-          and what I do.
+          Welcome to my personal website, built from scratch to showcase who I
+          am and what I do.
         </Typography>
         <Typography variant="body1" gutterBottom>
           Here, you’ll find a curated selection of my projects, highlighting the
           challenges I’ve tackled and the solutions I’ve developed across
           machine learning and computer science. You can also explore my
           educational background and professional experience for a well-rounded
-          view of my technical journey and growth.
+          view of my journey and growth.
         </Typography>
         <Typography variant="body1" gutterBottom>
           Beyond the technical, this site offers a glimpse into the lighter side

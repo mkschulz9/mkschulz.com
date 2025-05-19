@@ -21,12 +21,11 @@ export const SideBar: React.FC = ({}) => {
       'Large Scale Optimization for ML*',
       'Design & Analysis of Algorithms',
       'Foundations of AI',
-    ],
-    defaultOpen: true,
-    coursesInProgress: [
       'Applied Natural Language Processing',
       'Database Systems',
     ],
+    gpa: '3.5',
+    defaultOpen: true,
   };
 
   const degreeInfoBatchelors = {

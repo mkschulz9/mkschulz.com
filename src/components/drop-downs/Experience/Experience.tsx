@@ -26,14 +26,7 @@ const experiences = [
     title: 'Lead Software Engineer',
     institution: 'SchedGo (now EduRoute)',
     description:
-      'This was my first role in a professional company. I led an extension to the startup’s web application, helping the company win first place at UC Davis’ Big Bang Business Competition 2023.',
-  },
-  {
-    year: 2023,
-    title: 'M.S. in Computer Science (Focus: AI/ML)',
-    institution: 'University of Southern California',
-    description:
-      'I am currently pursuing a Master of Science in Computer Science (Focus: AI/ML) at USC with an expected graduation date of May 2025. Here I am continuing to stregthen my AI/ML skillset through academic work and personal projects.',
+      'This was my first role in a professional company. I led an extension to the startup’s web application, helping the company win first place at UC Davis’ Big Bang! Business Competition 2023.',
   },
   // {
   //   year: 2023,
@@ -47,14 +40,21 @@ const experiences = [
     title: 'ML Student Researcher',
     institution: 'USC AutoDrive Lab',
     description:
-      'I joined a lab at USC where I focus on researching, reproducing, and improving SoTA machine learning-powered solutions to autonomous driving.',
+      'Shortly after starting my M.S. at USC, I joined an on-campus lab where I focused on researching and reproducing SoTA machine learning-based systems for autonomous driving.',
   },
   {
     year: 2024,
     title: 'Software Integration Engineer Intern',
     institution: 'NASA Deep Space Network (Peraton)',
     description:
-      "Last Summer, I worked as a Software Integration Engineer Intern at NASA's Deep Space Network, where I collaborated with cross-functional teams to redesign and redevelop an internal application from scratch.",
+      "Over Summer 2024, I worked as a software integration engineer intern at NASA's Deep Space Network, where I collaborated with cross-functional teams to redesign and redevelop an internal app.",
+  },
+  {
+    year: 2025,
+    title: 'M.S. in Computer Science (Focus: AI/ML)',
+    institution: 'University of Southern California',
+    description:
+      'I graduated with an M.S. in Computer Science (Focus: AI/ML) from USC in May 2025. During my time at USC, I strengthened my data structures, algorithms, and OOP skills while developing advanced skills in AI/ML.',
   },
 ];
 

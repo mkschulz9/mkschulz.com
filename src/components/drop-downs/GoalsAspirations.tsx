@@ -6,43 +6,43 @@ import background from '../../assets/secondary_background.png';
 import sf_map from '../../assets/sf_map.png';
 
 const goalsData = [
+  // {
+  //   id: 1,
+  //   title: '6 Month Goal',
+  //   description:
+  //     'Within six months, I aim to publish at least one research paper based on my work at the USC AutoDrive Lab.',
+  //   left: '23%',
+  // },
+  // {
+  //   id: 2,
+  //   title: '1 Year Goal',
+  //   description:
+  //     'After one year, my goals are to graduate from my Master’s program at USC and receive three job offers for full-time employment.',
+  //   left: '-19%',
+  // },
   {
     id: 1,
-    title: '6 Month Goal',
-    description:
-      'Within six months, I aim to publish at least one research paper based on my work at the USC AutoDrive Lab.',
-    left: '23%',
-  },
-  {
-    id: 2,
-    title: '1 Year Goal',
-    description:
-      'After one year, my goals are to graduate from my Master’s program at USC and receive three job offers for full-time employment.',
-    left: '-19%',
-  },
-  {
-    id: 3,
     title: '3 Year Goal',
     description:
       'Within three years, I aim to progress into a team lead position at my current company and lead projects that produce substantial value.',
     left: '3%',
   },
   {
-    id: 4,
+    id: 2,
     title: '5 Year Goal',
     description:
       'After five years, I aim to start my own tech company that is not only successful but also positively influences the lives of others.',
     left: '19%',
   },
   {
-    id: 5,
+    id: 3,
     title: '10 Year Goal',
     description:
       'In ten years, I aspire to grow my company to over one million users while keeping the higher purpose of positive impact a focus.',
     left: '-19%',
   },
   {
-    id: 6,
+    id: 4,
     title: 'Long-term Vision',
     description:
       'I aim to stay updated with the latest advancements in computer science and give back to young professionals through mentorship.',
