@@ -90,7 +90,7 @@ export const SideBar: React.FC = ({}) => {
             href="https://github.com/mkschulz9"
             text="GitHub"
           />
-          <IconText Icon={LocationOnIcon} text="Los Angeles, CA" />
+          <IconText Icon={LocationOnIcon} text="Austin, TX" />
           <IconText Icon={HomeIcon} text="Bay Area, CA" />
           <EmailCopyTooltip />
         </Stack>

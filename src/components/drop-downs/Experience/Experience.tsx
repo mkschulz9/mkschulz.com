@@ -56,6 +56,13 @@ const experiences = [
     description:
       'I graduated with an M.S. in Computer Science (Focus: AI/ML) from USC in May 2025. During my time at USC, I strengthened my data structures, algorithms, and OOP skills while developing advanced skills in AI/ML.',
   },
+  {
+    year: 2025,
+    title: 'Software Engineer',
+    institution: 'Visa',
+    description:
+      'I currently work full-time as a SWE building agentic AI applications using LangGraph on Visa’s Ecosystem & Operational Risk team to detect, prevent, and mitigate risks across the global payment ecosystem.',
+  },
 ];
 
 export const Experience: React.FC = () => {
