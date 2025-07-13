@@ -60,8 +60,8 @@ export const FeaturedProjects: React.FC = () => {
         </>,
         <>
           This RAG-enhanced chatbot can answer professional questions about me.
-          It's powered by <strong>DeepSeek's R1 Distill LLaMA 70B</strong>,
-          accessed via <strong>OpenAI's SDK</strong>, and uses{' '}
+          It's powered by <strong>Mistral's NeMo-12B-Instruct</strong>, accessed
+          via <strong>OpenAI's SDK</strong>, and uses{' '}
           <strong>IBM's Granite-Embedding-125M-English</strong> model for dense
           vector embeddings and semantic search. This project is hosted on
           Hugging Face Spaces and brought to life with a Gradio-powered chat
