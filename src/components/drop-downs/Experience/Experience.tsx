@@ -61,7 +61,7 @@ const experiences = [
     title: 'Software Engineer',
     institution: 'Visa',
     description:
-      'I currently work full-time as a SWE building agentic AI applications using LangGraph on Visa’s Ecosystem & Operational Risk team to detect, prevent, and mitigate risks across the global payment ecosystem.',
+      'I currently work full-time as a SWE building agentic AI applications on Visa’s Automated Payment Fraud Disruption (APFD) team, part of the Value Added Services division, to detect, prevent, and mitigate prepaid card fraud across the global payment ecosystem.',
   },
 ];
 
