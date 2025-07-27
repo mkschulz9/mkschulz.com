@@ -40,11 +40,11 @@ export const DropDowns: React.FC = ({}) => {
         children={<GoalsAspirations />}
         icon={<FlagIcon />}
       ></ExpandableList>
-      <ExpandableList
+      {/* <ExpandableList
         primary="FEEDBACK"
         children={<Feedback />}
         icon={<ForumIcon />}
-      ></ExpandableList>
+      ></ExpandableList> */}
     </Stack>
   );
 };
