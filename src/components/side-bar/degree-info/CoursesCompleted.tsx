@@ -12,9 +12,7 @@ export const CoursesCompleted: React.FC<CoursesCompletedProps> = props => {
     <Stack>
       <Typography variant="body2" minWidth={'122px'}>
         &bull;{' '}
-        {props.coursesInProgress
-          ? 'Courses In-progress:'
-          : 'Courses Completed:'}
+        {props.coursesInProgress ? 'Courses In-progress:' : 'Featured Courses:'}
       </Typography>
       <Stack direction="row" flexWrap="wrap" width={'100%'}>
         {props.courses.map((course, index) => (

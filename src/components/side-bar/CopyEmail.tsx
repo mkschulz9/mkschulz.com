@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 export const EmailCopyTooltip: React.FC = ({}) => {
   const [tooltipTitle, setTooltipTitle] = useState('Copy');
-  const email = 'mkschulz@usc.edu';
+  const email = 'mkschulzcr@gmail.com';
 
   const copyToClipboard = async () => {
     try {
