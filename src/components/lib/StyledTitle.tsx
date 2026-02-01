@@ -8,7 +8,8 @@ export const StyledTitle = styled(Typography)<StyledTitleProps>(
   ({ fontSize }) => ({
     textAlign: 'center',
     fontSize: `${fontSize}px`,
-    fontFamily: 'Comfortaa',
+    fontFamily: 'Space Grotesk, Manrope, sans-serif',
     fontWeight: 'bold',
+    letterSpacing: '0.02em',
   })
 );

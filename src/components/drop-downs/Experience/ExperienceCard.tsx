@@ -8,6 +8,7 @@ import {
   TimelineSeparator,
 } from '@mui/lab';
 import { Typography, Collapse, useMediaQuery, useTheme } from '@mui/material';
+import { motion } from 'framer-motion';
 import React, { useState } from 'react';
 
 interface ExperienceCardProps {
@@ -17,6 +18,8 @@ interface ExperienceCardProps {
   description: string;
   defaultOpen?: boolean;
 }
+
+const MotionTimelineItem = motion(TimelineItem);
 
 export const ExperienceCard: React.FC<ExperienceCardProps> = props => {
   const theme = useTheme();
@@ -29,7 +32,10 @@ export const ExperienceCard: React.FC<ExperienceCardProps> = props => {
   };
 
   return (
-    <TimelineItem>
+    <MotionTimelineItem
+      whileHover={{ scale: 1.01 }}
+      transition={{ duration: 0.3 }}
+    >
       <TimelineOppositeContent
         m={isXs || isBtwnMdLg ? '' : 'auto 0'}
         mt={isXs || isBtwnMdLg ? 1.5 : ''}
@@ -62,6 +68,6 @@ export const ExperienceCard: React.FC<ExperienceCardProps> = props => {
           </Typography>
         </Collapse>
       </TimelineContent>
-    </TimelineItem>
+    </MotionTimelineItem>
   );
 };

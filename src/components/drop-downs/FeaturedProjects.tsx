@@ -16,6 +16,7 @@ import Button from '@mui/material/Button';
 import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import TagManager from 'react-gtm-module';
 import bits_background from '../../assets/bits_background.jpg';
 import aws_logo from '../../assets/aws_logo.png';
 import reddit_comments from '../../assets/reddit_comments.png';
@@ -34,6 +35,15 @@ import ec2_logo from '../../assets/ec2_logo.png';
 import route53_logo from '../../assets/route53_logo.png';
 
 export const FeaturedProjects: React.FC = () => {
+  const trackProjectClick = (title: string, url?: string) => {
+    TagManager.dataLayer({
+      dataLayer: {
+        event: 'project_link_click',
+        project_title: title,
+        project_url: url,
+      },
+    });
+  };
   const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
 
@@ -60,8 +70,8 @@ export const FeaturedProjects: React.FC = () => {
         </>,
         <>
           This RAG-enhanced chatbot can answer professional questions about me.
-          It's powered by <strong>Mistral's NeMo-12B-Instruct</strong>, accessed
-          via <strong>OpenAI's SDK</strong>, and uses{' '}
+          It's powered by <strong>Anthropic's Claude Haiku 4.5</strong> (
+          <strong>claude-haiku-4-5-20251001</strong>) and uses{' '}
           <strong>IBM's Granite-Embedding-125M-English</strong> model for dense
           vector embeddings and semantic search. This project is hosted on
           Hugging Face Spaces and brought to life with a Gradio-powered chat
@@ -168,20 +178,23 @@ export const FeaturedProjects: React.FC = () => {
     <Stack
       sx={{
         alignItems: 'center',
-        backgroundImage: `url(${bits_background})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        borderRadius: '5px',
+        background:
+          'linear-gradient(135deg, rgba(12, 15, 26, 0.92), rgba(30, 41, 59, 0.7))',
+        borderRadius: '18px',
         p: 3,
+        border: '1px solid rgba(148, 163, 184, 0.16)',
+        backdropFilter: 'blur(16px)',
       }}
     >
       <Stack maxWidth={'95%'}>
         <Paper
-          elevation={3}
+          elevation={0}
           sx={{
             maxWidth: 440,
-            bgcolor: 'secondary.main',
-            borderRadius: '10px',
+            bgcolor: 'rgba(15, 23, 42, 0.8)',
+            borderRadius: '16px',
+            border: '1px solid rgba(148, 163, 184, 0.16)',
+            backdropFilter: 'blur(12px)',
           }}
         >
           <SwipeableViews index={activeStep} onChangeIndex={handleStepChange}>
@@ -217,7 +230,7 @@ export const FeaturedProjects: React.FC = () => {
                   </ImageList>
                 )}
 
-                <CardContent sx={{ bgcolor: 'secondary.main' }}>
+                <CardContent sx={{ bgcolor: 'rgba(15, 23, 42, 0.7)' }}>
                   <Typography gutterBottom variant="h5">
                     {project.title}
                   </Typography>
@@ -236,7 +249,17 @@ export const FeaturedProjects: React.FC = () => {
                       size="small"
                       href={project.githubLink}
                       target="_blank"
-                      sx={{ mb: -3 }}
+                      onClick={() =>
+                        trackProjectClick(project.title, project.githubLink)
+                      }
+                      sx={{
+                        mb: -3,
+                        color: 'primary.main',
+                        transition: 'transform 0.2s ease',
+                        '&:hover': {
+                          transform: 'translateY(-2px)',
+                        },
+                      }}
                     >
                       {project.alternateIcon ? (
                         project.alternateIcon
@@ -251,9 +274,9 @@ export const FeaturedProjects: React.FC = () => {
           </SwipeableViews>
           <MobileStepper
             sx={{
-              borderBottomLeftRadius: '10px',
-              borderBottomRightRadius: '10px',
-              bgcolor: 'secondary.main',
+              borderBottomLeftRadius: '16px',
+              borderBottomRightRadius: '16px',
+              bgcolor: 'rgba(15, 23, 42, 0.8)',
               maxWidth: 440,
             }}
             steps={maxSteps}

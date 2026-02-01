@@ -39,7 +39,7 @@ export const WelcomeAboutMe: React.FC = () => {
       img: cs_ai_img,
       content: [
         'Fun fact: I began college as a business major. After my first semester, I knew it was not the right fit, so I switched to computer science, and the rest is history. I fell in love with the fact that whatever idea you could dream up, you could build and bring to life!',
-        'Having earned an M.S. in Computer Science (Focus: AI/ML), I have developed a deep passion for computer science and AI. I continuously seek opportunities to apply my knowledge in innovative, real-world applications.',
+        'Having earned an M.S. in Computer Science (AI/ML Focus), I have developed a deep passion for computer science and AI. I continuously seek opportunities to apply my knowledge in innovative, real-world applications.',
       ],
     },
     {
@@ -73,14 +73,16 @@ export const WelcomeAboutMe: React.FC = () => {
   return (
     <Stack alignItems={'center'}>
       <Paper
-        elevation={3}
+        elevation={0}
         sx={{
           p: 3,
           mb: 2,
           mt: -2,
-          backgroundImage: `url(${background})`,
-          backgroundSize: 'cover',
+          background:
+            'linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.7))',
+          border: '1px solid rgba(148, 163, 184, 0.16)',
           color: 'white',
+          backdropFilter: 'blur(14px)',
         }}
       >
         <Typography
@@ -117,11 +119,13 @@ export const WelcomeAboutMe: React.FC = () => {
       </Paper>
       <Stack maxWidth={'95%'} maxHeight={'80%'}>
         <Paper
-          elevation={3}
+          elevation={0}
           sx={{
             maxWidth: 440,
-            bgcolor: 'secondary.main',
-            borderRadius: '10px',
+            bgcolor: 'rgba(15, 23, 42, 0.8)',
+            borderRadius: '16px',
+            border: '1px solid rgba(148, 163, 184, 0.16)',
+            backdropFilter: 'blur(14px)',
           }}
         >
           <SwipeableViews index={activeStep} onChangeIndex={handleStepChange}>
@@ -130,12 +134,12 @@ export const WelcomeAboutMe: React.FC = () => {
                 <CardMedia
                   sx={{
                     height: 240,
-                    borderTopLeftRadius: '10px',
-                    borderTopRightRadius: '10px',
+                    borderTopLeftRadius: '16px',
+                    borderTopRightRadius: '16px',
                   }}
                   image={card.img}
                 />
-                <CardContent sx={{ bgcolor: 'secondary.main' }}>
+                <CardContent sx={{ bgcolor: 'rgba(15, 23, 42, 0.7)' }}>
                   <Typography gutterBottom variant="h5">
                     {card.title}
                   </Typography>
@@ -155,9 +159,9 @@ export const WelcomeAboutMe: React.FC = () => {
           </SwipeableViews>
           <MobileStepper
             sx={{
-              borderBottomLeftRadius: '10px',
-              borderBottomRightRadius: '10px',
-              bgcolor: 'secondary.main',
+              borderBottomLeftRadius: '16px',
+              borderBottomRightRadius: '16px',
+              bgcolor: 'rgba(15, 23, 42, 0.8)',
               maxWidth: 440,
             }}
             steps={maxSteps}

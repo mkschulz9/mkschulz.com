@@ -11,7 +11,7 @@ import { IconText } from './IconText';
 export const SideBar: React.FC = ({}) => {
   const degreeInfoMasters = {
     degreeType: 'M.S.',
-    degree: 'Computer Science (Focus: AI/ML)',
+    degree: 'Computer Science (AI/ML Focus)',
     startDate: new Date('2023-08-21'),
     endDate: new Date('2025-05-10'),
     completedCourses: [
@@ -25,7 +25,7 @@ export const SideBar: React.FC = ({}) => {
       'Database Systems',
     ],
     gpa: '3.5',
-    defaultOpen: true,
+    defaultOpen: false,
   };
 
   const degreeInfoBatchelors = {
@@ -68,8 +68,22 @@ export const SideBar: React.FC = ({}) => {
   };
 
   return (
-    <Stack sx={{ maxWidth: { md: '34%', xl: '28%' } }}>
-      <Paper elevation={3} sx={{ p: 1 }}>
+    <Stack
+      sx={{
+        width: '100%',
+        maxWidth: { md: '40%', lg: '38%', xl: '30%' },
+      }}
+    >
+      <Paper
+        elevation={0}
+        sx={{
+          p: 2,
+          background: 'rgba(11, 16, 32, 0.7)',
+          border: '1px solid rgba(148, 163, 184, 0.16)',
+          backdropFilter: 'blur(16px)',
+          boxShadow: '0px 25px 60px rgba(5, 8, 20, 0.45)',
+        }}
+      >
         <PortraitName name="Matthew K. Schulz" />
         <Divider />
         <Stack

@@ -1,9 +1,7 @@
 import { Timeline } from '@mui/lab';
 import React from 'react';
 import { Paper } from '@mui/material';
-import TouchAppIcon from '@mui/icons-material/TouchApp';
 import { ExperienceCard } from './ExperienceCard';
-import background from '../../../assets/background_experience.avif';
 
 const experiences = [
   {
@@ -12,7 +10,7 @@ const experiences = [
     institution: 'Diablo Valley College',
     description:
       'While in community college, I discovered my passion for computer science and developed a strong work ethic that has carried me to where I am today.',
-    defaultOpen: true,
+    defaultOpen: false,
   },
   {
     year: 2021,
@@ -51,10 +49,10 @@ const experiences = [
   },
   {
     year: 2025,
-    title: 'M.S. in Computer Science (Focus: AI/ML)',
+    title: 'M.S. in Computer Science (AI/ML Focus)',
     institution: 'University of Southern California',
     description:
-      'I graduated with an M.S. in Computer Science (Focus: AI/ML) from USC in May 2025. During my time at USC, I strengthened my data structures, algorithms, and OOP skills while developing advanced skills in AI/ML.',
+      'I graduated with an M.S. in Computer Science (AI/ML Focus) from USC in May 2025. During my time at USC, I strengthened my data structures, algorithms, and OOP skills while developing advanced skills in AI/ML.',
   },
   {
     year: 2025,
@@ -68,23 +66,16 @@ const experiences = [
 export const Experience: React.FC = () => {
   return (
     <Paper
-      elevation={3}
+      elevation={0}
       sx={{
         position: 'relative',
-        backgroundImage: `url(${background})`,
-        backgroundSize: 'cover',
-        borderRadius: '5px',
+        background:
+          'linear-gradient(135deg, rgba(12, 15, 26, 0.9), rgba(30, 41, 59, 0.7))',
+        borderRadius: '18px',
+        border: '1px solid rgba(148, 163, 184, 0.16)',
+        backdropFilter: 'blur(16px)',
       }}
     >
-      <TouchAppIcon
-        sx={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          margin: 1.5,
-        }}
-      />
-
       <Timeline position="alternate">
         {experiences.map((experience, index) => (
           <ExperienceCard

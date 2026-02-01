@@ -1,6 +1,7 @@
 import { Stack, Tooltip, Typography } from '@mui/material';
 import EmailIcon from '@mui/icons-material/Email';
 import { useState } from 'react';
+import TagManager from 'react-gtm-module';
 
 export const EmailCopyTooltip: React.FC = ({}) => {
   const [tooltipTitle, setTooltipTitle] = useState('Copy');
@@ -10,6 +11,12 @@ export const EmailCopyTooltip: React.FC = ({}) => {
     try {
       await navigator.clipboard.writeText(email);
       setTooltipTitle('Copied!');
+      TagManager.dataLayer({
+        dataLayer: {
+          event: 'email_copy',
+          email: email,
+        },
+      });
     } catch (err) {
       console.error('Failed to copy text: ', err);
     }
@@ -32,6 +39,11 @@ export const EmailCopyTooltip: React.FC = ({}) => {
           gap: 0.75,
           width: 'fit-content',
           cursor: 'pointer',
+          color: 'text.secondary',
+          transition: 'color 0.2s ease',
+          '&:hover': {
+            color: 'text.primary',
+          },
         }}
         onClick={copyToClipboard}
       >
