@@ -6,7 +6,6 @@ import {
   Typography,
   Collapse,
 } from '@mui/material';
-import TouchAppIcon from '@mui/icons-material/TouchApp';
 import { BulletPoint } from '../../lib/BulletPoint';
 import { CoursesCompleted } from './CoursesCompleted';
 import uscLogo from '../../../assets/usc_logo.png';
@@ -127,18 +126,21 @@ export const DegreeInformation: React.FC<DegreeInformationProps> = props => {
           position: 'relative',
           display: 'flex',
           justifyContent: 'center',
+          alignItems: 'center',
+          minHeight: { xs: 56, sm: 70, md: 84 },
           pb: 0.75,
           cursor: 'pointer',
         }}
         onClick={() => setExpanded(!expanded)}
       >
-        <img src={logo} style={{ maxWidth: '50%', height: 'auto' }} />
-        <TouchAppIcon
-          fontSize={'small'}
+        <Box
+          component="img"
+          src={logo}
+          alt={`${props.degreeType} logo`}
           sx={{
-            position: 'absolute',
-            top: 0,
-            right: 0,
+            width: { xs: 160, sm: 200, md: 240 },
+            maxWidth: '100%',
+            height: 'auto',
           }}
         />
       </Box>

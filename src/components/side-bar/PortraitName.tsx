@@ -14,9 +14,11 @@ export const PortraitName: React.FC<PortraitNameProps> = props => {
         sx={{
           width: { xs: 220, md: 210 },
           height: { xs: 220, md: 210 },
+          border: '3px solid rgba(96, 165, 250, 0.6)',
+          boxShadow: '0px 15px 40px rgba(59, 130, 246, 0.4)',
         }}
       />
-      <StyledTitle fontSize={40}>{props.name}</StyledTitle>
+      <StyledTitle fontSize={36}>{props.name}</StyledTitle>
     </Stack>
   );
 };

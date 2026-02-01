@@ -12,8 +12,9 @@ export const ResponsiveBox: React.FC<ResponsiveBoxProps> = props => {
         display: 'flex',
         flexDirection: { sm: 'column', md: 'row' },
         width: '100%',
-        gap: 0.5,
+        gap: { xs: 2, md: 3 },
         mt: 0.5,
+        alignItems: 'flex-start',
       }}
     >
       {props.children}

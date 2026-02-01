@@ -78,14 +78,16 @@ export const GoalsAspirations: React.FC = () => {
   return (
     <Stack>
       <Paper
-        elevation={3}
+        elevation={0}
         sx={{
           p: 3,
           mb: 2,
           mt: -2,
-          backgroundImage: `url(${background})`,
-          backgroundSize: 'cover',
+          background:
+            'linear-gradient(135deg, rgba(12, 15, 26, 0.9), rgba(30, 41, 59, 0.75))',
+          border: '1px solid rgba(148, 163, 184, 0.16)',
           color: 'white',
+          backdropFilter: 'blur(14px)',
         }}
       >
         <Typography variant="h5" gutterBottom>
@@ -98,9 +100,12 @@ export const GoalsAspirations: React.FC = () => {
       </Paper>
       <Paper
         ref={anchorRef}
-        elevation={3}
+        elevation={0}
         sx={{
-          borderRadius: '10px',
+          borderRadius: '16px',
+          border: '1px solid rgba(148, 163, 184, 0.16)',
+          background: 'rgba(12, 15, 26, 0.7)',
+          backdropFilter: 'blur(14px)',
         }}
       >
         <Stack
@@ -109,9 +114,10 @@ export const GoalsAspirations: React.FC = () => {
             backgroundImage: `url(${sf_map})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            borderRadius: '10px',
+            borderRadius: '14px',
             p: 3,
             gap: 2.5,
+            minHeight: 280,
           }}
         >
           {goalsData.map(goal => (
