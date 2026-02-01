@@ -139,6 +139,22 @@ export const FeaturedProjects: React.FC = () => {
       ],
       githubLink: 'https://github.com/mkschulz9/mkschulz.com',
     },
+    {
+      title: 'Explore More on GitHub',
+      content: [
+        <>
+          Curious about more of the projects I have worked on? My GitHub hosts
+          additional builds, experiments, and implementation details beyond the
+          highlights shown here.
+        </>,
+        <>
+          Visit my GitHub profile to explore repositories, read technical notes,
+          and see how each project was put together.
+        </>,
+      ],
+      imgList: [bits_background],
+      githubLink: 'https://github.com/mkschulz9',
+    },
     // {
     //   title: 'api.mkschulz.com',
     //   content: [
